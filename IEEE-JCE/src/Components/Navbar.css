@@ -1,0 +1,19 @@
+.logo{
+    margin-right: 5rem !important;
+    
+}
+
+.navbar{
+    background-color: #020202 !important;
+}
+
+.navlink{
+    color: rgb(240, 255, 255) !important;
+    font-weight: bolder !important;
+    margin-right: 2rem !important;
+}
+
+.navlink:active{
+    text-decoration: underline !important;
+}
+

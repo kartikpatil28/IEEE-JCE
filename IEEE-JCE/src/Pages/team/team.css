@@ -1,0 +1,37 @@
+
+
+.mainheading{
+    text-align: center;
+    color: aliceblue;
+    font-size: 30px;
+    margin: 30px 0;
+}
+
+.member_card{
+    height: auto;
+    width: 15rem;
+    margin: 40px;
+    transition: all 0.9s ease;
+}
+
+.member_card:hover{
+    box-shadow: 0 4px 20px rgba(248, 242, 242, 0.813); /* Box shadow effect */
+    transform: translateY(-10px); /* Move the card slightly upwards */
+}
+
+.outer_div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.grid-background {
+    background-image: url('/src/assets/grid.jpg'); /* Adjust path as needed */
+    background-size: cover; /* Or 'contain' or specify exact dimensions */
+    background-repeat: no-repeat; /* Prevents tiling if you don’t want it */
+    height: auto; /* Adjust as per your requirement */
+    width: 100vw;
+  }
+  
+  
+  
