@@ -32,7 +32,7 @@ function about() {
             <div className='outerbox'>
               <div className='boxinline'>
               <div className='box'>500+ Members</div>
-              <div className='box'>50+ events</div></div>
+              <div className='box'>50 events</div></div>
               <div className='boxinline'>
               <div className='box'>4 Societies</div>
               <div className='box'>10+ Mentors</div></div>
