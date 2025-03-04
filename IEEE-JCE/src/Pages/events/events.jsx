@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 // Mock event data (this could be fetched from an API)
 const eventData = {
@@ -8,9 +9,18 @@ const eventData = {
   about:
     "The IEEE Hackathon 2025 brings together engineers, programmers, and innovators to build creative solutions to real-world problems. This event provides an opportunity to network with industry experts, gain hands-on experience, and explore new technologies. Participate in this thrilling competition to enhance your skills and possibly win exciting prizes!",
   gallery: [
-    { src: "/assets/gallery1.jpg", alt: "Gallery Image 1" },
-    { src: "/assets/gallery2.jpg", alt: "Gallery Image 2" },
-    { src: "/assets/gallery3.jpg", alt: "Gallery Image 3" },
+    {
+      src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      alt: "Hackathon Participants",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      alt: "Team Collaboration",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      alt: "Coding Session",
+    },
   ],
   registrationForm: [
     {
@@ -78,61 +88,116 @@ function EventPage() {
   };
 
   return (
-    <div className="bg-white text-black font-poppins">
+    <div className="bg-gray-50 text-gray-900 font-poppins">
       {/* Event Overview */}
-      <div className="text-center py-12 bg-blue-100">
-        <h1 className="text-4xl font-bold text-blue-600">{eventData.title}</h1>
-        <p className="text-xl text-gray-700 mt-4">{eventData.description}</p>
+      <div className="relative h-[60vh] flex items-center justify-center text-center bg-gradient-to-r from-blue-600 to-purple-600">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative max-w-4xl px-6"
+        >
+          <h1 className="text-5xl font-bold text-white">{eventData.title}</h1>
+          <p className="text-xl text-gray-200 mt-4">{eventData.description}</p>
+        </motion.div>
       </div>
 
       {/* Event Details */}
-      <div className="px-6 md:px-20 py-12 text-center">
-        <h2 className="text-2xl font-bold text-blue-500">About the Event</h2>
-        <p className="mt-4 text-lg leading-relaxed text-gray-600">
+      <div className="px-6 md:px-20 py-16 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold text-blue-600"
+        >
+          About the Event
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-4 text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto"
+        >
           {eventData.about}
-        </p>
+        </motion.p>
 
-        <div className="flex justify-center py-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-center py-8"
+        >
           <img
-            src="/assets/event-image.jpg"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
             alt="Event"
-            className="rounded-lg shadow-lg w-3/4 md:w-1/2"
+            className="rounded-lg shadow-lg w-full md:w-3/4 lg:w-1/2"
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Gallery Section */}
-      <div className="py-12 bg-blue-50">
-        <h2 className="text-2xl font-bold text-blue-500 text-center">
+      <div className="py-16 bg-white">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold text-blue-600 text-center"
+        >
           Event Gallery 📸
-        </h2>
-        <div className="flex flex-wrap justify-center gap-6 py-6">
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-8 px-6"
+        >
           {eventData.gallery.map((image, index) => (
-            <div key={index} className="w-full sm:w-64 md:w-48 lg:w-64 xl:w-48">
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              className="overflow-hidden rounded-lg shadow-lg"
+            >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-48 object-cover rounded-lg shadow-md"
+                className="w-full h-64 object-cover transform transition-transform hover:scale-110"
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Registration Section */}
-      <div className="py-12 bg-blue-100">
-        <h2 className="text-2xl font-bold text-blue-600 text-center">
+      <div className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold text-white text-center"
+        >
           Register for the Event 🚀
-        </h2>
-        <div className="max-w-lg mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="max-w-lg mx-auto mt-8 p-8 bg-white rounded-lg shadow-lg"
+        >
           <form onSubmit={handleSubmit}>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {/* Dynamic Form Fields */}
               {eventData.registrationForm.map((field, index) => (
                 <div key={index}>
                   <label
                     htmlFor={field.id}
-                    className="text-lg font-medium text-gray-700"
+                    className="block text-lg font-medium text-gray-700"
                   >
                     {field.label}
                   </label>
@@ -166,9 +231,9 @@ function EventPage() {
               <div>
                 <button
                   type="submit"
-                  className={`w-full py-2 ${
+                  className={`w-full py-3 ${
                     isSubmitting ? "bg-gray-400" : "bg-blue-600"
-                  } text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  } text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
                   disabled={isSubmitting} // Disable button while submitting
                 >
                   {isSubmitting ? "Submitting..." : "Register Now"}
@@ -176,7 +241,7 @@ function EventPage() {
               </div>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

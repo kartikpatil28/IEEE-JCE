@@ -1,77 +1,42 @@
-.logo{
-    margin-right: 5rem !important;
-    
+/* Navbar Styles */
+nav {
+  transition: background-color 0.3s ease;
 }
 
-.navbar{
-    background-color: #020202 !important;
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.navlink{
-    color: rgb(240, 255, 255) !important;
-    font-weight: bolder !important;
-    margin-right: 2rem !important;
+/* Hamburger Icon */
+.hamburger-icon {
+  transition: transform 0.3s ease;
 }
 
-.navlink:active{
-    text-decoration: underline !important;
+.hamburger-icon:hover {
+  transform: scale(1.1);
 }
-.navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-  }
-  
-  .navbar .navbar-toggler {
-    border: none;
-    background: none;
-  }
-  
-  .navbar .navbar-toggler:focus {
-    outline: none;
-  }
-  
-  .navbar .navbar-collapse {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    width: 100%;
-    position: absolute;
-    top: 56px;
-    left: 0;
-    background-color: #ffffff;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar .navbar-collapse a {
-    color: #000;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar .navbar-collapse a:hover {
-    color: #007bff;
-  }
-  
-  .navbar .navbar-collapse.show {
-    display: block;
-  }
-  
-  @media (min-width: 1024px) {
-    .navbar .navbar-collapse {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      position: static;
-      background-color: transparent;
-      box-shadow: none;
-      padding: 0;
-    }
-  
-    .navbar .navbar-collapse a {
-      padding: 0.5rem 0.75rem;
-    }
-  }
-  
 
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
