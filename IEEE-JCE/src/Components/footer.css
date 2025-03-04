@@ -1,46 +1,22 @@
-.footer {
-    background-color: #2C2C2C;
-    color: #ffffff;
-  }
-  
-  .footer_div {
-    margin-bottom: 20px;
-  }
-  
-  .footer_div h5 {
-    margin-bottom: 15px;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .social-icons a {
-    color: #ffffff;
-    font-size: 28px;
-  }
-  
-  .social-icons a:hover {
-    color: #007bff;
-  }
-  
-  .newsletter-form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .newsletter-form input {
-    width: 60%;
-  }
-  
-  .newsletter-form button {
-    width: 20%;
-  }
-  
-  .text-gray-400 {
-    color: #d1d1d1;
-  }
-  
+/* Footer Styles */
+footer {
+  transition: background-color 0.3s ease;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1);
+}
+
+/* Social Media Icons */
+.social-icon {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
