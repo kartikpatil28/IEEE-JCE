@@ -42,54 +42,67 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-400">
-
-          {/* Column 1 - Get Help */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm text-gray-400">
+          {/* Column 1 - Join IEEE */}
           <div className="text-center md:text-left">
-            <h5 className="text-white font-semibold mb-4">Get Help</h5>
+            <h5 className="text-white font-semibold mb-4">Join IEEE</h5>
+            <p className="mb-4">
+              Unlock opportunities, connect with peers, and access exclusive resources by joining IEEE.
+            </p>
+            <a
+              href="https://www.ieee.org/membership/join/index.html"
+              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300"
+            >
+              Join IEEE Today!
+            </a>
+          </div>
+
+          {/* Column 2 - Useful Links */}
+          <div className="text-center md:text-left">
+            <h5 className="text-white font-semibold mb-4">Useful Links</h5>
             <ul className="space-y-2">
-              <li><a href="https://www.ieee.org/" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">IEEE</a></li>
-              <li><a href="https://wie.ieee.org/" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">WIE</a></li>
-              <li><a href="https://www.ieeer10.org/" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">IEEE Region 10</a></li>
-              <li><a href="https://ieeebangalore.org/" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">IEEE Bangalore Section</a></li>
-              <li><a href="https://ieeexplore.ieee.org/Xplore/home.jsp" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">IEEE Xplore</a></li>
+              <li><a href="/about" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">About Us</a></li>
+              <li><a href="/events" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Events</a></li>
+              <li><a href="/membership" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Membership</a></li>
+              <li><a href="https://www.ieee.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">IEEE</a></li>
+              <li><a href="https://www.ieeer10.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Region 10</a></li>
+              <li><a href="https://ieeebangalore.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Bangalore Section</a></li>
+              <li><a href="https://ieee-collabratec.ieee.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">IEEE Collaborate</a></li>
+              <li><a href="https://www.ieee.org/membership/join/global-membership.html" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">About Global IEEE Membership</a></li>
             </ul>
           </div>
 
-          {/* Column 2 - Social Media */}
-          <div className="text-center">
-            <h5 className="text-white font-semibold mb-4">Follow Us</h5>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-blue-500 transition duration-300 ease-in-out">
-                <i className="fab fa-facebook-f text-white"></i>
-              </a>
-              <a href="#" className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-blue-400 transition duration-300 ease-in-out">
-                <i className="fab fa-twitter text-white"></i>
-              </a>
-              <a href="#" className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-pink-500 transition duration-300 ease-in-out">
-                <i className="fab fa-instagram text-white"></i>
-              </a>
-              <a href="#" className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-blue-700 transition duration-300 ease-in-out">
-                <i className="fab fa-linkedin text-white"></i>
-              </a>
-            </div>
+          {/* Column 3 - Societies */}
+          <div className="text-center md:text-left">
+            <h5 className="text-white font-semibold mb-4">Societies</h5>
+            <ul className="space-y-2">
+              <li><a href="https://www.computer.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Computer Society</a></li>
+              
+              
+              <li><a href="https://wie.ieee.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Women in Engineering</a></li>
+              <li><a href="https://ieee-aess.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Aerospace and Electronic Systems Society</a></li>
+            </ul>
           </div>
 
-          {/* Column 3 - Community */}
-          <div className="text-center md:text-right">
-            <h5 className="text-white font-semibold mb-4">Community</h5>
+          {/* Column 4 - Contact Us */}
+          <div className="text-center md:text-left">
+            <h5 className="text-white font-semibold mb-4">Contact Us</h5>
             <ul className="space-y-2">
-              <li><a href="https://www.instagram.com/ieee_jce?igsh=NWNtcTlmYml1OHMw" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/in/ieee-jce-3b71022b9/" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">LinkedIn</a></li>
-              <li><a href="https://twitter.com/IEEE_JCE" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">Twitter</a></li>
-              <li><a href="https://chat.whatsapp.com/Jy9bjM9GZs11bMPZ8trhWO" className="hover-text text-white no-underline transition-all duration-300 ease-in-out hover:text-blue-400">WhatsApp</a></li>
+              <li className="text-gray-300">599/2 T.S. Nagar Hunchanhatti Road</li>
+              <li className="text-gray-300">Macche Belagavi 590014</li>
+              <li className="text-gray-300">Phone: +91 831 2411192</li>
+              <li className="text-gray-300">Email: info[at]jainbgm.in</li>
             </ul>
           </div>
         </div>
 
         {/* Copyright Section */}
         <div className="text-center text-gray-500 text-sm mt-8">
-          &copy; {new Date().getFullYear()} IEEE | Jain College of Engineering, Belagavi
+          &copy; {new Date().getFullYear()} All rights reserved JCE IEEE
+          <br />
+          Made with ❤️ by JCE IEEE Web Team 2025
+          <br />
+          Address: #599/2 T.S. Nagar Hunchanhatti Road Macche Belagavi 590014
         </div>
       </div>
 

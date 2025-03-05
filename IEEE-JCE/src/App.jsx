@@ -3,12 +3,16 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Pages/Home/home.jsx";
 import About from "./Pages/about/about.jsx";
 import Events from "./Pages/events/events.jsx";
-import Wie from "./Pages/gallery/gallery.jsx";
+import Gallery from "./Pages/gallery/gallery.jsx";
 import Team from "./Pages/team/team.jsx";
 import Contact from "./Pages/contact/contact.jsx";
 import Navbar from "./Components/Navbar.jsx";
 import Footer from "./Components/footer.jsx";
 import Execoms from "./Pages/Execoms/execoms.jsx";
+import Societies from "./Pages/societies/Societies.jsx"; // Main Societies page
+import AESS from "./Pages/societies/AESS.jsx"; // AESS page
+import CS from "./Pages/societies/CS.jsx"; // CS page
+import WIE from "./Pages/societies/WIE.jsx"; // WIE page
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
@@ -32,10 +36,17 @@ function App() {
           {/* Other Pages */}
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/gallery" element={<Wie />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/team" element={<Team />} />
           <Route path="/execoms" element={<Execoms />} />
           <Route path="/contact" element={<Contact />} />
+
+          {/* Societies Page and Nested Routes */}
+          <Route path="/societies" element={<Societies />}>
+            <Route path="aess" element={<AESS />} />
+            <Route path="cs" element={<CS />} />
+            <Route path="wie" element={<WIE />} />
+          </Route>
         </Routes>
         <Footer />
       </BrowserRouter>
