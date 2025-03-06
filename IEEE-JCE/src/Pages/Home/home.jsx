@@ -67,32 +67,42 @@ const societies = [
 const galleryImages = [
   {
     id: 1,
-    src: "https://via.placeholder.com/400x300?text=Event+1",
+    src: "src/assets/Events/IMG_7428.JPG",
     alt: "Event 1",
   },
   {
     id: 2,
-    src: "https://via.placeholder.com/400x300?text=Event+2",
+    src: "src/assets/Events/IMG_7430.jpg",
     alt: "Event 2",
   },
   {
     id: 3,
-    src: "https://via.placeholder.com/400x300?text=Event+3",
-    alt: "Event 3",
+    src: "src/assets/Events/IMG_7433.jpg",
+    alt: "Campus to Corporate",
   },
   {
     id: 4,
-    src: "https://via.placeholder.com/400x300?text=Event+4",
+    src: "src/assets/Events/IMG_7434.jpg",
     alt: "Event 4",
   },
   {
     id: 5,
-    src: "https://via.placeholder.com/400x300?text=Event+5",
+    src: "src/assets/Events/IMG_7435.jpg",
     alt: "Event 5",
   },
   {
     id: 6,
-    src: "https://via.placeholder.com/400x300?text=Event+6",
+    src: "src/assets/Events/IMG_7436.jpg",
+    alt: "Event 6",
+  },
+  {
+    id: 6,
+    src: "src/assets/Events/AESS-poster.jpg",
+    alt: "Event 6",
+  },
+  {
+    id: 6,
+    src: "src/assets/Events/cyberquest.jpg",
     alt: "Event 6",
   },
 ];
@@ -135,9 +145,9 @@ const GallerySection = () => {
                 alt={image.alt}
                 className="w-full h-56 object-cover"
               />
-              <div className="p-4 bg-gray-900 border-t border-gray-800">
+              {/* <div className="p-4 bg-gray-900 border-t border-gray-800">
                 <p className="text-sm text-gray-300 font-medium">{image.alt}</p>
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>
