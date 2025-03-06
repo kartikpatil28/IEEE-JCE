@@ -62,6 +62,100 @@ const societies = [
   },
 ];
 
+// Gallery Section Component
+
+const galleryImages = [
+  {
+    id: 1,
+    src: "https://via.placeholder.com/400x300?text=Event+1",
+    alt: "Event 1",
+  },
+  {
+    id: 2,
+    src: "https://via.placeholder.com/400x300?text=Event+2",
+    alt: "Event 2",
+  },
+  {
+    id: 3,
+    src: "https://via.placeholder.com/400x300?text=Event+3",
+    alt: "Event 3",
+  },
+  {
+    id: 4,
+    src: "https://via.placeholder.com/400x300?text=Event+4",
+    alt: "Event 4",
+  },
+  {
+    id: 5,
+    src: "https://via.placeholder.com/400x300?text=Event+5",
+    alt: "Event 5",
+  },
+  {
+    id: 6,
+    src: "https://via.placeholder.com/400x300?text=Event+6",
+    alt: "Event 6",
+  },
+];
+
+// Gallery Section Component
+const GallerySection = () => {
+  return (
+    <div className="py-20 px-6 bg-black">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-extrabold text-white mb-4 text-center"
+        >
+          Memorable <span className="text-blue-500">Moments</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg text-gray-400 mb-12 text-center"
+        >
+          Relive our cherished memories through a captivating photo gallery.
+        </motion.p>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {galleryImages.map((image) => (
+            <motion.div
+              key={image.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-56 object-cover"
+              />
+              <div className="p-4 bg-gray-900 border-t border-gray-800">
+                <p className="text-sm text-gray-300 font-medium">{image.alt}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Show More Button */}
+        <div className="text-center mt-12">
+          <Link
+            to="/gallery"
+            className="inline-block rounded-full bg-white text-black px-10 py-3 text-lg font-semibold shadow-lg hover:bg-blue-600 hover:text-white hover:shadow-2xl transform hover:scale-105 transition-all duration-300 no-underline"
+          >
+            View Gallery
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Hero Section Component
 const HeroSection = () => {
   return (
@@ -261,6 +355,7 @@ const Home = () => {
       <HeroSection />
       <StatsSection />
       <MembershipSection />
+      <GallerySection /> {/* Add the Gallery Section here */}
       <Team />
       <EventsPanel
         showEventsPanel={showEventsPanel}

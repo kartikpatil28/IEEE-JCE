@@ -29,6 +29,7 @@ function Navbar() {
     { name: "Gallery", path: "/gallery" },
     { name: "Execoms", path: "/execoms" },
     { name: "Contact", path: "/contact" },
+    { name: "Membership", path: "/membership" },
   ];
 
   return (

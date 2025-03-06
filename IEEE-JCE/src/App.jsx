@@ -10,9 +10,10 @@ import Navbar from "./Components/Navbar.jsx";
 import Footer from "./Components/footer.jsx";
 import Execoms from "./Pages/Execoms/execoms.jsx";
 import Societies from "./Pages/societies/Societies.jsx"; // Main Societies page
-import AESS from "./Pages/societies/AESS.jsx"; // AESS page
-import CS from "./Pages/societies/CS.jsx"; // CS page
-import WIE from "./Pages/societies/WIE.jsx"; // WIE page
+import AESS from "./Pages/Societies/aess.jsx"
+import CS from "./Pages/societies/cs.jsx"; // CS page
+import WIE from "./Pages/societies/wie.jsx"; // WIE page
+import Membership from "./Pages/Membership/membership.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/execoms" element={<Execoms />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/membership" element={<Membership />} />
+
 
           {/* Societies Page and Nested Routes */}
           <Route path="/societies" element={<Societies />}>
