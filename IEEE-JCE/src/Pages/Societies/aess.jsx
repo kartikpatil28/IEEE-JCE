@@ -34,9 +34,9 @@ const AESS = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl transform rotate-6 scale-95"></div>
+              <div className="absolute  bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl transform rotate-6 scale-95"></div>
               <img
-                src="/api/placeholder/800/600"
+                src="https://images.pexels.com/photos/256297/pexels-photo-256297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Aerospace technology"
                 className="w-full h-auto rounded-2xl shadow-2xl relative z-10"
               />
@@ -173,15 +173,15 @@ const AESS = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 overflow-hidden flex flex-col md:flex-row">
               <div className="w-full md:w-1/3 bg-blue-900/30 p-6 flex flex-col justify-center items-center">
-                <span className="text-3xl font-bold text-blue-400">15</span>
-                <span className="text-xl">April</span>
+                <span className="text-3xl font-bold text-blue-400">21</span>
+                <span className="text-xl">March</span>
                 <span className="text-gray-400">2025</span>
               </div>
               <div className="w-full md:w-2/3 p-6">
-                <h3 className="text-xl font-bold mb-2">Annual AESS Conference</h3>
+                <h3 className="text-xl font-bold mb-2">IEEE Space Reaserach Paper submission</h3>
                 <div className="flex items-center text-gray-400 mb-4">
                   <Calendar size={16} className="mr-2" />
-                  <span>9:00 AM - 5:00 PM</span>
+                  <span>March 21</span>
                 </div>
                 <p className="text-gray-300 mb-4">
                   Join us for our flagship conference featuring keynote speakers, 

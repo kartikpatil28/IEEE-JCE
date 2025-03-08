@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import ModalImage from "react-modal-image";
 
 // Mock API function to fetch event data
 const fetchEventData = async () => {
@@ -14,15 +13,15 @@ const fetchEventData = async () => {
           "The IEEE Hackathon 2025 brings together engineers, programmers, and innovators to build creative solutions to real-world problems. This event provides an opportunity to network with industry experts, gain hands-on experience, and explore new technologies. Participate in this thrilling competition to enhance your skills and possibly win exciting prizes!",
         gallery: [
           {
-            src: "src/assets/Events/cyberquest.jpg",
+            src: "https://via.placeholder.com/800x600",
             alt: "Hackathon Participants",
           },
           {
-            src: "src/assets/Events/cyberquest-2.jpg",
+            src: "https://via.placeholder.com/800x600",
             alt: "Team Collaboration",
           },
           {
-            src: "src/assets/Events/AESS-poster.jpg",
+            src: "https://via.placeholder.com/800x600",
             alt: "Event Poster",
           },
         ],
@@ -125,7 +124,7 @@ function EventPage() {
   return (
     <div className="bg-gray-50 text-gray-900 font-poppins">
       {/* Hero Section */}
-      <div className="relative h-[70vh] flex items-center justify-center text-center bg-gradient-to-r from-blue-600 to-purple-600">
+      <div className="relative h-[70vh] flex items-center justify-center text-center bg-gradient-to-r from-blue-600 to-purple-600 animate-gradient">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -135,9 +134,16 @@ function EventPage() {
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
             {eventData.title}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200">
+          <p className="text-xl md:text-2xl text-gray-200 mb-8">
             {eventData.description}
           </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition-all"
+          >
+            Register Now
+          </motion.button>
         </motion.div>
       </div>
 
