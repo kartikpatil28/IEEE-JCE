@@ -60,13 +60,15 @@ function Navbar() {
     },
     { name: "IEEE Banglore Section", url: "https://ieeebangalore.org/" },
     { name: "IEEE NKSS", url: "https://r10.ieee.org/north-karnataka/" },
+    { name: "IEEE JCE", url: "https://www.jce.ac.in/ieee-sb/" },
+    { name: "vTools", url: "https://vtools.vtools.ieee.org/" },
     { name: "More Sites", url: "https://www.ieee.org/sitemap.html" },
   ];
 
   const socialLinks = [
     { icon: "instagram", url: "#" },
     { icon: "linkedin", url: "#" },
-    { icon: "twitter", url: "#" }
+    { icon: "twitter", url: "#" },
   ];
 
   return (
@@ -78,22 +80,35 @@ function Navbar() {
           <ul className="flex flex-wrap space-x-2 md:space-x-5">
             {ieeeLinks.map((link, index) => (
               <li key={index} className="relative group">
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 whitespace-nowrap no-underline"
-                >
-                  {link.name === "IEEE Xplore Digital Library" ? (
-                    <>
-                      IEEE <span className="italic">Xplore</span> Digital
-                      Library
-                    </>
-                  ) : (
-                    link.name
-                  )}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
-                </a>
+                {link.name === "More Sites" ? (
+                  // Use NavLink for internal navigation to the Important Links page
+                  <NavLink
+                    to={link.url}
+                    className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 whitespace-nowrap no-underline"
+                    onClick={() => handleLinkClick(link.url)}
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+                  </NavLink>
+                ) : (
+                  // Keep external links as regular anchor tags
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 whitespace-nowrap no-underline"
+                  >
+                    {link.name === "IEEE Xplore Digital Library" ? (
+                      <>
+                        IEEE <span className="italic">Xplore</span> Digital
+                        Library
+                      </>
+                    ) : (
+                      link.name
+                    )}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -261,7 +276,9 @@ function Navbar() {
             onClick={toggleMenu}
             aria-label="Toggle Menu"
           >
-            <i className={`fa ${isMenuOpen ? "fa-times" : "fa-bars"} text-xl`}></i>
+            <i
+              className={`fa ${isMenuOpen ? "fa-times" : "fa-bars"} text-xl`}
+            ></i>
           </button>
 
           {/* Mobile Menu Overlay */}
@@ -300,16 +317,14 @@ function Navbar() {
 
                   {/* Logo display */}
                   <div className="mb-6 bg-gradient-to-br from-white/10 to-white/5 p-3 rounded-xl flex items-center justify-center border border-white/20 shadow-lg">
-                    <img
-                      src={jceLogo}
-                      alt="JCE Logo"
-                      className="h-10"
-                    />
+                    <img src={jceLogo} alt="JCE Logo" className="h-10" />
                   </div>
 
                   {/* Main navigation links */}
                   <div className="mb-6">
-                    <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">Navigation</h3>
+                    <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">
+                      Navigation
+                    </h3>
                     <ul className="flex flex-col gap-2 text-base font-medium">
                       {links.map((link) => (
                         <li key={link.name} className="relative">
@@ -337,7 +352,9 @@ function Navbar() {
 
                   {/* Societies section */}
                   <div className="mb-6">
-                    <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">Societies</h3>
+                    <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">
+                      Societies
+                    </h3>
                     <div className="bg-blue-900/20 rounded-lg overflow-hidden border border-white/10 shadow-inner">
                       <button
                         onClick={() => {
@@ -371,20 +388,38 @@ function Navbar() {
 
                   {/* IEEE Links section */}
                   <div className="mb-6">
-                    <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">IEEE Links</h3>
+                    <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">
+                      IEEE Links
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {ieeeLinks.map((link, index) => (
-                        <a
-                          key={index}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-blue-300 bg-blue-900/30 px-3 py-1.5 rounded-md hover:bg-blue-800/40 transition-colors duration-200 border border-blue-700/30 shadow-sm"
-                        >
-                          {link.name === "IEEE Xplore Digital Library"
-                            ? "IEEE Xplore"
-                            : link.name}
-                        </a>
+                        link.name === "More Sites" ? (
+                          // Use NavLink for internal navigation to the Important Links page
+                          <NavLink
+                            key={index}
+                            to={link.url}
+                            onClick={() => {
+                              toggleMenu();
+                              handleLinkClick(link.url);
+                            }}
+                            className="text-sm text-blue-300 bg-blue-900/30 px-3 py-1.5 rounded-md hover:bg-blue-800/40 transition-colors duration-200 border border-blue-700/30 shadow-sm"
+                          >
+                            {link.name}
+                          </NavLink>
+                        ) : (
+                          // Keep external links as regular anchor tags
+                          <a
+                            key={index}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-blue-300 bg-blue-900/30 px-3 py-1.5 rounded-md hover:bg-blue-800/40 transition-colors duration-200 border border-blue-700/30 shadow-sm"
+                          >
+                            {link.name === "IEEE Xplore Digital Library"
+                              ? "IEEE Xplore"
+                              : link.name}
+                          </a>
+                        )
                       ))}
                     </div>
                   </div>
