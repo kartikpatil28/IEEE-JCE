@@ -1,60 +1,60 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Mock API function to fetch event data
 const fetchEventData = async () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        title: "Hackathon 2025",
-        description:
-          "Join us for an exciting Hackathon to showcase your skills and compete with the best minds!",
-        about:
-          "The IEEE Hackathon 2025 brings together engineers, programmers, and innovators to build creative solutions to real-world problems. This event provides an opportunity to network with industry experts, gain hands-on experience, and explore new technologies. Participate in this thrilling competition to enhance your skills and possibly win exciting prizes!",
-        gallery: [
+        // Past events data
+        pastEvents: [
           {
-            src: "https://via.placeholder.com/800x600",
-            alt: "Hackathon Participants",
+            title: "Web Development Workshop",
+            date: "January 15, 2025",
+            description: "Hands-on workshop covering HTML, CSS, and JavaScript fundamentals",
+            image: "/api/placeholder/600/400",
+            highlights: ["100+ participants", "Industry mentors", "Project showcase"]
           },
           {
-            src: "https://via.placeholder.com/800x600",
-            alt: "Team Collaboration",
+            title: "IoT Seminar",
+            date: "December 10, 2024",
+            description: "Expert-led seminar on Internet of Things technologies and applications",
+            image: "/api/placeholder/600/400",
+            highlights: ["Live demonstrations", "Q&A session", "Networking"]
           },
           {
-            src: "https://via.placeholder.com/800x600",
-            alt: "Event Poster",
+            title: "Code Jam 2024",
+            date: "November 5, 2024",
+            description: "Competitive programming contest with over 100 participants",
+            image: "/api/placeholder/600/400",
+            highlights: ["5 challenging rounds", "Cash prizes", "Recruitment opportunities"]
           },
         ],
-        registrationForm: [
+        // Upcoming events data
+        upcomingEvents: [
           {
-            id: "name",
-            label: "Full Name",
-            type: "text",
-            placeholder: "Enter your full name",
+            title: "Hackathon 2025",
+            date: "April 20-21, 2025",
+            description: "48-hour hackathon challenging teams to build innovative solutions",
+            image: "/api/placeholder/600/400",
+            theme: "Sustainable Technology",
+            countdown: "43"
           },
           {
-            id: "email",
-            label: "Email",
-            type: "email",
-            placeholder: "Enter your email",
+            title: "AI/ML Workshop Series",
+            date: "May 5-15, 2025",
+            description: "Three-part workshop series on artificial intelligence and machine learning",
+            image: "/api/placeholder/600/400",
+            theme: "Future of AI",
+            countdown: "58"
           },
           {
-            id: "phone",
-            label: "Phone Number",
-            type: "text",
-            placeholder: "Enter your phone number",
-          },
-          {
-            id: "college",
-            label: "College",
-            type: "text",
-            placeholder: "Enter your college name",
-          },
-          {
-            id: "message",
-            label: "Why do you want to participate?",
-            type: "textarea",
-            placeholder: "Your reason here...",
+            title: "Technical Paper Presentation",
+            date: "June 10, 2025",
+            description: "Platform for students to present their research papers and innovations",
+            image: "/api/placeholder/600/400",
+            theme: "Emerging Technologies",
+            countdown: "94"
           },
         ],
       });
@@ -62,20 +62,12 @@ const fetchEventData = async () => {
   });
 };
 
-function EventPage() {
+function EventsPage() {
   const [eventData, setEventData] = useState(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    college: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
-
+  const [activeTab, setActiveTab] = useState("upcoming");
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  
   // Fetch event data on component mount
   useEffect(() => {
     const loadEventData = async () => {
@@ -86,207 +78,184 @@ function EventPage() {
     loadEventData();
   }, []);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      alert("Registration Successful! We will send a confirmation email shortly.");
-      setFormData({ name: "", email: "", phone: "", college: "", message: "" });
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
-  const openLightbox = (index) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
+  // Auto-rotate carousel
+  useEffect(() => {
+    if (!isLoading && activeTab === "upcoming") {
+      const interval = setInterval(() => {
+        setCurrentEventIndex((prev) => 
+          prev === eventData.upcomingEvents.length - 1 ? 0 : prev + 1
+        );
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [isLoading, activeTab, eventData]);
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-50">
-        <div className="text-2xl font-semibold text-blue-600 animate-pulse">
-          Loading...
+      <div className="flex h-screen bg-black">
+        <div className="m-auto flex flex-col items-center">
+          <div className="relative w-24 h-24">
+            <div className="absolute w-full h-full border-4 border-t-blue-500 border-r-purple-500 border-b-pink-500 border-l-indigo-500 rounded-full animate-spin"></div>
+          </div>
+          <div className="mt-6 text-xl text-white font-light tracking-widest animate-pulse">
+            LOADING EVENTS
+          </div>
         </div>
       </div>
     );
   }
 
+  const currentEvents = activeTab === "upcoming" ? eventData.upcomingEvents : eventData.pastEvents;
+  const currentEvent = currentEvents[currentEventIndex];
+
   return (
-    <div className="bg-gray-50 text-gray-900 font-poppins">
-      {/* Hero Section */}
-      <div className="relative h-[70vh] flex items-center justify-center text-center bg-gradient-to-r from-blue-600 to-purple-600 animate-gradient">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative max-w-4xl px-6"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            {eventData.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            {eventData.description}
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition-all"
-          >
-            Register Now
-          </motion.button>
-        </motion.div>
-      </div>
-
-      {/* About Section */}
-      <div className="px-6 md:px-20 py-16 text-center bg-white">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-blue-600 mb-8"
-        >
-          About the Event
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-4 text-lg md:text-xl leading-relaxed text-gray-600 max-w-3xl mx-auto"
-        >
-          {eventData.about}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="flex justify-center py-8"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-            alt="Event"
-            className="rounded-lg shadow-lg w-full md:w-3/4 lg:w-1/2"
-          />
-        </motion.div>
-      </div>
-
-      {/* Gallery Section */}
-      <div className="py-16 bg-gray-100">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-blue-600 text-center mb-8"
-        >
-          Event Gallery 📸
-        </motion.h2>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6"
-        >
-          {eventData.gallery.map((image, index) => (
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white font-sans">
+      {/* Events Section */}
+      <section className="py-12 px-6">
+        <div className="container mx-auto max-w-6xl">
+          {/* Tab Selection */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex rounded-full p-1 bg-gray-800">
+              {["upcoming", "past"].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => {
+                    setActiveTab(tab);
+                    setCurrentEventIndex(0);
+                  }}
+                  className={`px-6 py-3 rounded-full font-medium transition-all ${
+                    activeTab === tab
+                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                      : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  {tab === "upcoming" ? "Upcoming Events" : "Past Events"}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          {/* Event Display */}
+          <AnimatePresence mode="wait">
             <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="overflow-hidden rounded-lg shadow-lg cursor-pointer transform transition-transform hover:shadow-xl"
-              onClick={() => openLightbox(index)}
+              key={`${activeTab}-${currentEventIndex}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="mb-8"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-64 object-cover"
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Registration Section */}
-      <div className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-white text-center mb-8"
-        >
-          Register for the Event 🚀
-        </motion.h2>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="max-w-lg mx-auto p-8 bg-white rounded-lg shadow-lg"
-        >
-          <form onSubmit={handleSubmit}>
-            <div className="space-y-6">
-              {eventData.registrationForm.map((field, index) => (
-                <div key={index}>
-                  <label
-                    htmlFor={field.id}
-                    className="block text-lg font-medium text-gray-700"
-                  >
-                    {field.label}
-                  </label>
-                  {field.type === "textarea" ? (
-                    <textarea
-                      id={field.id}
-                      name={field.id}
-                      value={formData[field.id]}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder={field.placeholder}
-                      rows="4"
-                      required
-                    />
-                  ) : (
-                    <input
-                      type={field.type}
-                      id={field.id}
-                      name={field.id}
-                      value={formData[field.id]}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder={field.placeholder}
-                      required
-                    />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Event Image */}
+                <div className="relative overflow-hidden rounded-2xl h-64 lg:h-96">
+                  <img 
+                    src={currentEvent.image} 
+                    alt={currentEvent.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Event Details */}
+                <div className="flex flex-col justify-center">
+                  <h2 className="text-3xl font-bold mb-3 text-blue-400">
+                    {currentEvent.title}
+                  </h2>
+                  
+                  <div className="flex items-center text-sm text-gray-300 mb-4">
+                    <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    {currentEvent.date}
+                    
+                    {activeTab === "upcoming" && (
+                      <span className="ml-4 flex items-center">
+                        <svg className="w-4 h-4 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        {currentEvent.countdown} days left
+                      </span>
+                    )}
+                  </div>
+                  
+                  {activeTab === "upcoming" && (
+                    <div className="mb-4 inline-block bg-gradient-to-r from-blue-800 to-purple-800 px-3 py-1 rounded-md text-sm">
+                      Theme: {currentEvent.theme}
+                    </div>
+                  )}
+                  
+                  <p className="text-lg text-gray-300 mb-6">
+                    {currentEvent.description}
+                  </p>
+                  
+                  {activeTab === "past" && (
+                    <div>
+                      <h4 className="text-lg font-medium mb-3 text-blue-500">Highlights</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {currentEvent.highlights.map((highlight, idx) => (
+                          <span key={idx} className="bg-gray-800 px-3 py-1 rounded-md text-sm">
+                            {highlight}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </div>
-              ))}
-
+              </div>
+            </motion.div>
+          </AnimatePresence>
+          
+          {/* Navigation Controls */}
+          <div className="flex justify-center items-center gap-3 mt-8">
+            {currentEvents.map((_, idx) => (
               <button
-                type="submit"
-                className={`w-full py-3 ${
-                  isSubmitting ? "bg-gray-400" : "bg-blue-600"
-                } text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Submitting..." : "Register Now"}
-              </button>
+                key={idx}
+                onClick={() => setCurrentEventIndex(idx)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  idx === currentEventIndex
+                    ? "bg-gradient-to-r from-blue-500 to-purple-500 w-8"
+                    : "bg-gray-700 hover:bg-gray-600"
+                }`}
+                aria-label={`Go to event ${idx + 1}`}
+              />
+            ))}
+          </div>
+          
+          {/* Event List View */}
+          <div className="mt-16">
+            <h3 className="text-xl font-medium mb-6 text-gray-200">All {activeTab === "upcoming" ? "Upcoming" : "Past"} Events</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {currentEvents.map((event, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -5 }}
+                  className={`bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden cursor-pointer transition-all border border-transparent hover:border-blue-500 ${
+                    idx === currentEventIndex ? "ring-2 ring-blue-500" : ""
+                  }`}
+                  onClick={() => setCurrentEventIndex(idx)}
+                >
+                  <div className="relative h-48">
+                    <img 
+                      src={event.image} 
+                      alt={event.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
+                    <div className="absolute bottom-0 left-0 p-4">
+                      <p className="text-sm text-blue-400">{event.date}</p>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-bold text-lg mb-2">{event.title}</h4>
+                    <p className="text-gray-400 text-sm line-clamp-2">{event.description}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </form>
-        </motion.div>
-      </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
 
-export default EventPage;
+export default EventsPage;
