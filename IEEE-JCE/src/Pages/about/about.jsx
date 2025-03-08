@@ -304,7 +304,7 @@ const AboutPage = () => {
                     </div>
                     <div className="ml-4">
                       <p className="font-semibold text-white">{testimonial.name}</p>
-                      <p className="text-gray-500 text-sm">IEEE JCE Member</p>
+                      <p className="text-gray-500 text-sm">{testimonial.position}</p>
                     </div>
                   </div>
                 </div>
@@ -440,13 +440,15 @@ const achievements = [
 const testimonials = [
   {
     quote:
-      "IEEE JCE has been a game-changer for me. The workshops and events have helped me grow both personally and professionally, opening doors I never thought possible.",
-    name: "Austin Pacheco",
+      "Throughout the year, our team successfully organized and executed a series of impactful events, including Creative Eye Photography Competition, Hackathon Code Quest, IEEE Day Celebrations, NKCON Events, TechTrivia Quiz, INCET 2K24, Teachers’ Day Celebrations, and many more. Additionally, I had the privilege of representing our student branch at prestigious gatherings like the Office Bearers Conclave at NMIT College, Bengaluru, and the IEEE Mysore Student Congress 2K24, broadening our network and bringing back valuable insights for our community.IEEE has always been more than just an organization—it has been a platform for students to enhance their technical, professional, and leadership skills, providing them with opportunities to engage in innovative projects, competitions, and networking with industry experts. The success of this year would not have been possible without the unwavering support of my team, faculty advisors, and the enthusiastic participation of our student members.As I hand over the leadership to Abhishek Devarushi, Chair (2025), I am confident that the IEEE Student Branch will continue to scale new heights under his guidance. I encourage the new team to build upon our achievements, explore new initiatives, and keep the IEEE spirit alive.I extend my sincere gratitude to everyone who contributed to this journey, and I look forward to supporting IEEE in any way Iwa can. Wishing the new team all the success in their endeavors!",
+    name: "Austin Pacheco ",
+    position:'Chair, IEEE Student Branch (2024)'
   },
   {
     quote:
       "Being part of IEEE JCE has given me the opportunity to work on exciting projects and connect with industry experts. It's more than just a student branch - it's a launchpad for careers.",
     name: "Chandan",
+    position:'Vice-Chair, IEEE Student Branch (2024)'
   },
 ];
 

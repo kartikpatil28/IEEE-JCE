@@ -75,7 +75,7 @@ const Membership = () => {
   const joinSteps = [
     "Visit the IEEE Membership Page",
     "Contact your college's IEEE student branch membership coordinator for guidance",
-    "Complete the registration form and choose the plan that suits you best",
+    "Complete the registration form and select the IEEE society you wish to join to kickstart your journey!",
     "Start your IEEE journey and unlock a world of opportunities!"
   ];
 
@@ -205,15 +205,15 @@ const Membership = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-center space-x-2">
                   <span className="text-blue-600">👤</span>
-                  <p className="text-gray-700"><strong>Name:</strong> [Insert Name]</p>
+                  <p className="text-gray-700"><strong>Name:</strong> Vinayak Agasimani</p>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <span className="text-blue-600">✉️</span>
-                  <p className="text-gray-700"><strong>Email:</strong> [Insert Email]</p>
+                  <p className="text-gray-700"><strong>Email:</strong>vinayakagasimani1@gmail.com</p>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <span className="text-blue-600">📱</span>
-                  <p className="text-gray-700"><strong>Phone:</strong> [Insert Phone Number]</p>
+                  <p className="text-gray-700"><strong>Phone:</strong>+91 81238 95082</p>
                 </div>
               </div>
             </div>
@@ -221,12 +221,7 @@ const Membership = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>© {new Date().getFullYear()} IEEE Student Branch. All rights reserved.</p>
-        </div>
-      </footer>
+      
     </div>
   );
 };
