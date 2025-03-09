@@ -453,9 +453,9 @@ const testimonials = [
 ];
 
 const galleryImages = [
-  "https://placehold.co/600x400/2563eb/FFFFFF/png?text=IEEE+Workshop",
-  "https://placehold.co/600x400/9333ea/FFFFFF/png?text=Hackathon+2024", 
-  "https://placehold.co/600x400/0ea5e9/FFFFFF/png?text=Tech+Conference"
+  "src/assets/Events/CTC/Campus-to-Corporate-14.jpg",
+  "src/assets/Events/IEEE_Day/IEEE_Day_1.jpg", 
+  "src/assets/Events/Conference/Conference-1.jpg",
 ]; 
 
 export default AboutPage;

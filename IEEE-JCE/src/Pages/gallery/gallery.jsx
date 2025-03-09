@@ -3,180 +3,166 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// All available images
+// All available images with proper organization
 const allImages = [
+  // WIE Women's Day Events
   {
-    source: "src/assets/Events/CTC/Campus-to-Corporate-14.jpg",
-    title: "Placement",
-    description: "Making students ready for the corporate world",
-    category: "Development"
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_1.jpg", import.meta.url).href,
+    title: "Women's Day Celebration",
+    description: "Celebrating International Women's Day with inspiring talks",
+    category: "WIE Events"
   },
   {
-    source: "src/assets/Events/IEEE_DAY/IEEE_DAY_1.jpg",
-    title: "IEEE DAY",
-    description: "Celebrating the spirit of IEEE with students",
-    category: "Events"
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_2.jpg", import.meta.url).href,
+    title: "Women in Tech Panel",
+    description: "Industry leaders sharing their experiences and insights",
+    category: "WIE Events"
   },
   {
-    source: "src/assets/Events/Weekend_events/Poster_1.jpg",
-    title: "Weekend Events",
-    description: "Fun and learning activities for students",
-    category: "Events"
-  },
-  {
-    source: "src/assets/Events/Conference/Conference-1.jpg",
-    title: "Memory & Storage Summit",
-    description: "Keynote speakers and tech talks",
-    category: "Hardware"
-  },
-  {
-    source: "src/assets/Events/CTC/Campus-to-Corporate-18.jpg",
-    title: "Networking",
-    description: "Building connections with industry professionals",
-    category: "Development"
-  },
-  {
-    source: "src/assets/Events/IEEE_DAY/IEEE_DAY_12.jpg",
-    title: "Speech by Dr.Praveen Chitti",
-    description: "Sharing insights on technology and innovation",
-    category: "Events"
-  },
-  {
-    source: "src/assets/Events/Conference/Conference-3.jpg",
-    title: "Memory & Storage Summit",
-    description: "Exploring the future of data storage",
-    category: "Hardware"
-  },
-  {
-    source: "src/assets/Events/cyberquest.jpg",
-    title: "CyberQuest",
-    description: "Cybersecurity competition for students",
-    category: "Development"
-  },
-  // Adding more images
-  {
-    source: "src/assets/Events/CTC/Campus-to-Corporate-5.jpg",
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_3.jpg", import.meta.url).href,
     title: "Technical Workshop",
-    description: "Hands-on learning for engineering students",
-    category: "Development"
+    description: "Hands-on learning session for women engineers",
+    category: "WIE Events"
   },
   {
-    source: "src/assets/Events/IEEE_DAY/IEEE_DAY_8.jpg",
-    title: "Collaborative Learning",
-    description: "Students working together on technical challenges",
-    category: "Workspace"
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_4.jpg", import.meta.url).href,
+    title: "Networking Session",
+    description: "Building connections and fostering collaboration",
+    category: "WIE Events"
   },
   {
-    source: "src/assets/Events/Conference/Conference-7.jpg",
-    title: "Panel Discussion",
-    description: "Industry experts discuss emerging technologies",
-    category: "Events"
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_5.jpg", import.meta.url).href,
+    title: "Innovation Showcase",
+    description: "Demonstrating projects and innovations by women engineers",
+    category: "WIE Events"
+  },
+
+  // Campus to Corporate Events
+  {
+    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-14.jpg", import.meta.url).href,
+    title: "Interview Preparation",
+    description: "Expert tips on acing technical interviews",
+    category: "Career Development"
   },
   {
-    source: "src/assets/Events/weekend_events/Poster_3.jpg",
-    title: "Robotics Competition",
-    description: "Showcasing innovation in robotics",
-    category: "Hardware"
+    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-18.jpg", import.meta.url).href,
+    title: "Industry Connect",
+    description: "Interaction with corporate professionals",
+    category: "Career Development"
   },
   {
-    source: "src/assets/Events/CTC/Campus-to-Corporate-10.jpg",
+    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-5.jpg", import.meta.url).href,
+    title: "Skill Development",
+    description: "Enhancing technical and soft skills",
+    category: "Career Development"
+  },
+  {
+    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-10.jpg", import.meta.url).href,
     title: "Mock Interviews",
-    description: "Preparing students for job interviews",
-    category: "Development"
-    
+    description: "Practice sessions with industry experts",
+    category: "Career Development"
   },
   {
-    source: "src/assets/Events/IEEE_DAY/IEEE_DAY_5.jpg",
-    title: "Tech Quiz",
-    description: "Testing knowledge on latest technologies",
-    category: "Events"
-    
-  },
-  {
-    source: "src/assets/Events/Conference/Conference-5.jpg",
-    title: "Tech Talks",
-    description: "Learning from industry leaders and researchers",
-    category: "Events"
-  },
-  {
-    source: "src/assets/Events/weekend_events/Poster_2.jpg",
-    title: "Coding Challenge",
-    description: "Competing in coding challenges and hackathons",
-    category: "Development"
-
-  },
-  {
-    source: "src/assets/Events/CTC/Campus-to-Corporate-12.jpg",
+    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-12.jpg", import.meta.url).href,
     title: "Resume Building",
-    description: "Crafting resumes for job applications",
-    category: "Development"
-    
+    description: "Creating impactful professional profiles",
+    category: "Career Development"
   },
-  {
-    source: "src/assets/Events/IEEE_DAY/IEEE_DAY_9.jpg",
-    title: "Tech Exhibition",
-    description: "Showcasing student projects and innovations",
-    category: "Events"
-   
-  },
-  {
-    source: "src/assets/Events/Conference/Conference-6.jpg",
-    title: "Networking",
 
-    description: "Building connections with industry professionals",
-    category: "Events"
+  // IEEE Day Celebrations
+  {
+    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_1.jpg", import.meta.url).href,
+    title: "IEEE Day Opening",
+    description: "Kickoff ceremony of IEEE Day celebrations",
+    category: "IEEE Events"
   },
   {
-    source: "src/assets/Events/weekend_events/Poster_1.jpg",
-    title: "Weekend Events",
-    description: "Fun and learning activities for students",
-    category:""
-  
+    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_12.jpg", import.meta.url).href,
+    title: "Technical Symposium",
+    description: "Showcasing latest technological advancements",
+    category: "IEEE Events"
   },
   {
-    source: "src/assets/Events/Weekend_events/Poster_3.jpg",
-    title: "Robotics Competition",
-    description: "Showcasing innovation in robotics",
-    category: "Hardware"
+    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_8.jpg", import.meta.url).href,
+    title: "Team Building",
+    description: "Collaborative activities and group projects",
+    category: "IEEE Events"
   },
   {
-    source: "src/assets/Events/Weekend_events/Poster_3.jpg",
-    title: "Robotics Competition",
-    description: "Showcasing innovation in robotics",
-    category: "Hardware"
+    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_5.jpg", import.meta.url).href,
+    title: "Tech Quiz",
+    description: "Testing knowledge in various technical domains",
+    category: "IEEE Events"
   },
   {
-    source: "src/assets/Events/Weekend_events/Poster_3.jpg",
-    title: "Robotics Competition",
-    description: "Showcasing innovation in robotics",
-    category: "Hardware"
+    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_9.jpg", import.meta.url).href,
+    title: "Project Exhibition",
+    description: "Display of innovative student projects",
+    category: "IEEE Events"
+  },
+
+  // Conference and Technical Events
+  {
+    source: new URL("../../assets/Events/Conference/Conference-1.jpg", import.meta.url).href,
+    title: "Memory & Storage Summit",
+    description: "Latest trends in storage technologies",
+    category: "Technical Events"
   },
   {
-    source: "src/assets/Events/Weekend_events/Poster_3.jpg",
-    title: "Robotics Competition",
-    description: "Showcasing innovation in robotics",
-    category: "Hardware"
+    source: new URL("../../assets/Events/Conference/Conference-3.jpg", import.meta.url).href,
+    title: "Expert Talk",
+    description: "Industry insights and future technologies",
+    category: "Technical Events"
   },
   {
-    source: "src/assets/Events/Weekend_events/Poster_3.jpg",
-    title: "Robotics Competition",
-    description: "Showcasing innovation in robotics",
-    category: "Hardware"
+    source: new URL("../../assets/Events/Conference/Conference-7.jpg", import.meta.url).href,
+    title: "Panel Discussion",
+    description: "Debating emerging technology trends",
+    category: "Technical Events"
   },
   {
-    source: "src/assets/Events/Weekend_events/Poster_3.jpg",
-    title: "Robotics Competition",
-    description: "Showcasing innovation in robotics",
-    category: "Hardware"
+    source: new URL("../../assets/Events/Conference/Conference-5.jpg", import.meta.url).href,
+    title: "Research Presentation",
+    description: "Sharing innovative research findings",
+    category: "Technical Events"
   },
   {
-    source: "src/assets/Events/Weekend_events/Poster_3.jpg",
-    title: "Robotics Competition",
-    description: "Showcasing innovation in robotics",
-    category: "Hardware"
+    source: new URL("../../assets/Events/Conference/Conference-6.jpg", import.meta.url).href,
+    title: "Networking Event",
+    description: "Building professional connections",
+    category: "Technical Events"
+  },
+
+  // Weekend Activities
+  {
+    source: new URL("../../assets/Events/Weekend_events/Poster_1.jpg", import.meta.url).href,
+    title: "Weekend Workshop",
+    description: "Practical learning through hands-on sessions",
+    category: "Workshops"
+  },
+  {
+    source: new URL("../../assets/Events/Weekend_events/Poster_2.jpg", import.meta.url).href,
+    title: "Coding Marathon",
+    description: "24-hour coding challenge for innovators",
+    category: "Workshops"
+  },
+  {
+    source: new URL("../../assets/Events/Weekend_events/Poster_3.jpg", import.meta.url).href,
+    title: "Robotics Workshop",
+    description: "Learning robotics fundamentals and applications",
+    category: "Workshops"
+  },
+
+  // Special Events
+  {
+    source: new URL("../../assets/Events/cyberquest.jpg", import.meta.url).href,
+    title: "CyberQuest",
+    description: "Exploring cybersecurity challenges and solutions",
+    category: "Special Events"
   }
 ];
 
+// Rest of the component remains the same...
 // Featured images (first 4 only)
 const featuredImages = allImages.slice(0, 4);
 
@@ -205,6 +191,14 @@ const Gallery = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false
+        }
+      }
+    ]
   };
 
   // Open lightbox with specific image
@@ -231,14 +225,14 @@ const Gallery = () => {
     <div className="max-w-7xl mx-auto px-4 py-12 bg-gray-50">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-indigo-800 mb-2">WIE Gallery</h1>
+        <h1 className="text-4xl font-bold text-indigo-800 mb-2">IEEE Gallery</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Women in Engineering - Showcasing innovation, creativity, and
-          technological excellence through visual stories
+          Showcasing our journey of innovation, learning, and growth through
+          memorable events and activities
         </p>
       </div>
 
-      {/* Featured Slider - Only shows first 4 images */}
+      {/* Featured Slider */}
       <div className="mb-16">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6 border-l-4 border-indigo-500 pl-3">
           Featured Highlights
@@ -264,7 +258,7 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Gallery Section - Shows all images with filtering */}
+      {/* Gallery Section */}
       <div>
         <div className="flex justify-between items-center mb-8 flex-wrap gap-4">
           <h2 className="text-2xl font-semibold text-gray-800 border-l-4 border-indigo-500 pl-3">
@@ -272,7 +266,7 @@ const Gallery = () => {
           </h2>
 
           {/* Filter buttons */}
-          <div className="flex space-x-2 overflow-x-auto pb-2">
+          <div className="flex flex-wrap gap-2">
             {allCategories.map((category) => (
               <button
                 key={category}
@@ -289,7 +283,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* Gallery grid - Shows filtered images */}
+        {/* Gallery grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredImages.map((item, index) => (
             <div
@@ -364,40 +358,37 @@ const Gallery = () => {
       {/* Information Section */}
       <div className="mt-20 bg-white rounded-xl shadow-md p-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-l-4 border-indigo-500 pl-3">
-          About WIE Gallery
+          About Our Gallery
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <p className="text-gray-600 mb-4">
-              The Women in Engineering (WIE) Gallery showcases the outstanding
-              contributions of women in various engineering disciplines. Through
-              visual storytelling, we celebrate innovation, creativity, and
-              technical excellence.
+              Our gallery showcases the vibrant activities and achievements of the IEEE Student Branch. 
+              Through these images, we capture moments of learning, innovation, and collaboration that 
+              define our journey in technical excellence.
             </p>
             <p className="text-gray-600">
-              Our collection features pioneering work across software
-              development, hardware engineering, systems design, and more. Each
-              image represents a story of persistence, problem-solving, and
-              passion for technology.
+              From technical workshops to cultural events, each image represents our commitment to 
+              fostering a dynamic environment where students can grow, learn, and excel in their 
+              chosen fields.
             </p>
           </div>
           <div className="bg-indigo-50 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-indigo-800 mb-3">
-              Join Our Community
+              Get Involved
             </h3>
             <p className="text-gray-700 mb-4">
-              Interested in contributing to our gallery or participating in WIE
-              events? Connect with us through:
+              Want to be part of our upcoming events? Connect with us through:
             </p>
             <ul className="space-y-2 text-gray-700">
               <li className="flex items-center">
-                <span className="mr-2">📧</span> Email: wie@engineering.org
+                <span className="mr-2">📧</span> Email: ieee@jce.ac.in
               </li>
               <li className="flex items-center">
-                <span className="mr-2">🌐</span> Website: engineering.org/wie
+                <span className="mr-2">🌐</span> Website: ieee.jce.ac.in
               </li>
               <li className="flex items-center">
-                <span className="mr-2">📱</span> Social: @WIEngineering
+                <span className="mr-2">📱</span> Social: @IEEE_JCE
               </li>
             </ul>
           </div>

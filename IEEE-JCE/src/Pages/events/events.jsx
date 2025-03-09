@@ -9,7 +9,7 @@ const fetchEventData = async () => {
         // Past events data
         pastEvents: [
           {
-            title: "Web Development Workshop",
+            title: "",
             date: "January 15, 2025",
             description: "Hands-on workshop covering HTML, CSS, and JavaScript fundamentals",
             image: "/api/placeholder/600/400",

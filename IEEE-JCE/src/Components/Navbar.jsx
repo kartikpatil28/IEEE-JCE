@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import logos (ensure the paths are correct)
-import jceLogo from "../assets/Logos/JCE.png";
+import jceLogo from "../assets/Logos/JCE-logo.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,7 +58,7 @@ function Navbar() {
       name: "IEEE Xplore Digital Library",
       url: "https://ieeexplore.ieee.org/Xplore/home.jsp",
     },
-    { name: "IEEE Banglore Section", url: "https://ieeebangalore.org/" },
+    { name: "IEEE Bangalore Section", url: "https://ieeebangalore.org/" },
     { name: "IEEE NKSS", url: "https://r10.ieee.org/north-karnataka/" },
     { name: "IEEE JCE", url: "https://www.jce.ac.in/ieee-sb/" },
     { name: "vTools", url: "https://vtools.vtools.ieee.org/" },
@@ -133,7 +133,7 @@ function Navbar() {
 
       {/* Main Navigation */}
       <nav
-        className={`w-full shadow-xl px-4 md:px-6 py-3 ${
+        className={`w-full shadow-xl px-4 md:px-6 py-1 ${
           scrolled ? "bg-black/95 backdrop-blur-md" : "bg-black"
         } text-white sticky top-0 z-50 transition-all duration-300 border-b border-white/10`}
       >
@@ -143,7 +143,7 @@ function Navbar() {
             <img
               src={jceLogo}
               alt="JCE Logo"
-              className="h-8 md:h-10 object-contain filter drop-shadow-md hover:brightness-110 transition-all"
+              className="h-24 md:h-16 object-contain filter drop-shadow-md hover:brightness-110 transition-all"
             />
           </div>
 
@@ -392,7 +392,7 @@ function Navbar() {
                       IEEE Links
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {ieeeLinks.map((link, index) => (
+                      {ieeeLinks.map((link, index) =>
                         link.name === "More Sites" ? (
                           // Use NavLink for internal navigation to the Important Links page
                           <NavLink
@@ -420,7 +420,7 @@ function Navbar() {
                               : link.name}
                           </a>
                         )
-                      ))}
+                      )}
                     </div>
                   </div>
 

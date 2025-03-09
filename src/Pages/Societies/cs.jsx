@@ -79,16 +79,16 @@ const ComputerSociety = () => {
                 </div>
                 <div className="p-6 sm:w-2/3">
                   <h3 className="text-xl font-bold text-white mb-1">
-                    Dr. Krupa Rasane
+                    Dr. Ananya Gupta
                   </h3>
                   <p className="text-green-400 font-semibold mb-3">
-                    Branch Councellor
+                    Faculty Advisor
                   </p>
                   <p className="text-gray-400 text-sm">
-                    Professor, Department of Electronics and Communication Engineering
+                    Associate Professor, Department of Computer Science & Engineering
                   </p>
                   <p className="text-gray-400 text-sm mt-2">
-                    Email: drkruparasane@jce.edu
+                    Email: ananya.gupta@jce.edu
                   </p>
                 </div>
               </div>
@@ -106,13 +106,13 @@ const ComputerSociety = () => {
                 </div>
                 <div className="p-6 sm:w-2/3">
                   <h3 className="text-xl font-bold text-white mb-1">
-                    Ms.Shrutika Panchkatte
+                    Riya Joshi
                   </h3>
                   <p className="text-green-400 font-semibold mb-3">
                     CS Chair
                   </p>
                   <p className="text-gray-400 text-sm">
-                    Electronics and Communication Engineering
+                    Computer Science Engineering
                   </p>
                   <p className="text-gray-400 text-sm mt-2">
                     IEEE Student Member
@@ -146,18 +146,67 @@ const ComputerSociety = () => {
         </div>
       </div>
 
-      {/* Gallery Section - Black Theme */}
+      {/* Gallery Section - Classic Theme */}
       <div className="p-8 bg-gray-900">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-green-400 mb-8">
-            Gallery
-          </h2>
-          <div className="bg-gray-800 rounded-lg p-8 text-center border border-gray-700">
-            <h3 className="text-2xl font-bold text-white mb-4">Coming Soon!</h3>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Our gallery will be updated with photos from our upcoming events and activities. 
-              Check back soon to see highlights from our Computer Society initiatives!
-            </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-green-400 mb-4">Gallery</h2>
+            <div className="w-20 h-0.5 bg-green-500 mx-auto"></div>
+          </div>
+          
+          <div className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
+            <div className="p-10">
+              {/* Classic Message */}
+              <div className="text-center mb-12">
+                <h3 className="text-2xl font-serif text-white mb-4">Coming Soon</h3>
+                <p className="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+                  We are in the process of curating a collection of memorable moments from our 
+                  upcoming events and activities. Each photograph will tell a story of innovation, 
+                  collaboration, and growth.
+                </p>
+              </div>
+
+              {/* Gallery Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                {[1, 2, 3, 4, 5, 6].map((_, index) => (
+                  <div 
+                    key={index} 
+                    className="aspect-[4/3] bg-gray-700 rounded-lg overflow-hidden relative group"
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center border-2 border-gray-600 rounded-lg">
+                      <div className="text-center p-4">
+                        <svg 
+                          className="w-8 h-8 text-gray-500 mx-auto mb-2" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth={1.5} 
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                        <p className="text-gray-400 text-sm font-light">Image {index + 1}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Quote */}
+              <div className="mt-12 text-center">
+                <blockquote className="text-gray-400 italic font-serif text-lg">
+                  "Every moment captured is a story preserved."
+                </blockquote>
+                <div className="mt-8">
+                  <button className="inline-flex items-center px-6 py-3 border border-green-500 text-green-400 rounded-lg hover:bg-green-500 hover:text-white transition-colors duration-300">
+                    <span className="font-light">Subscribe for Updates</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -194,4 +243,4 @@ const ComputerSociety = () => {
   );
 };
 
-export default ComputerSociety;
+export default ComputerSociety; 

@@ -2,8 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 // Import images
 import techtrivaImage from "../../assets/Events/Techtriva.jpg";
-import AessPoster from "../../assets/Events/AESS-poster.jpg";
-
 
 const AESS = () => {
   const fadeIn = {
@@ -15,7 +13,6 @@ const AESS = () => {
   // Gallery images array
   const galleryImages = [
     { src: techtrivaImage, alt: "TechTriva Event" },
-    { src: AessPoster, alt: "AESS Poster" },
     // Add more gallery images here when available
   ];
 
@@ -282,7 +279,7 @@ const AESS = () => {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <img
-                    src={AessPoster}
+                    src="/api/placeholder/400/300"
                     alt="Poster Presentation"
                     className="w-full h-full object-cover"
                   />
@@ -430,4 +427,4 @@ const AESS = () => {
   );
 };
 
-export default AESS;
+export default AESS; 

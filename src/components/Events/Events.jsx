@@ -1,15 +1,17 @@
 import React from 'react';
 import Gallery from '../Gallery/Gallery';
+import workshopImage from '../../assets/Events/IMG_0066.HEIC';
+
+// Import images using Vite's import.meta.url
+const eventImages = [
+  {
+    url: workshopImage,
+    caption: "IEEE Technical Workshop"
+  },
+  // Add more images here
+];
 
 const Events = () => {
-  const eventImages = [
-    {
-      url: "src/assets/Events/IMG_0066.HEIC",
-      caption: "IEEE Technical Workshop"
-    },
-    // Add more images here
-  ];
-
   return (
     <div className="min-h-screen bg-gray-900 pt-20">
       <div className="container mx-auto px-4">

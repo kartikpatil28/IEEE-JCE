@@ -65,12 +65,12 @@ const societies = [
 
 // Gallery images
 const galleryImages = [
-  { id: 1, src: "src/assets/Events/IMG_7428.JPG", alt: "Event 1" },
-  { id: 2, src: "src/assets/Events/IMG_7430.jpg", alt: "Event 2" },
-  { id: 3, src: "src/assets/Events/IMG_7433.jpg", alt: "Campus to Corporate" },
-  { id: 4, src: "src/assets/Events/IMG_7434.jpg", alt: "Event 4" },
-  { id: 5, src: "src/assets/Events/IMG_7435.jpg", alt: "Event 5" },
-  { id: 6, src: "src/assets/Events/IMG_7436.jpg", alt: "Event 6" },
+  { id: 1, src: "src/assets/Events/CTC/Campus-to-Corporate-14.jpg", alt: "Campus to Corporate" },
+  { id: 2, src: "src/assets/Events/CTC/Campus-to-Corporate-1.jpg", alt: "Campus to Corporate" },
+  { id: 3, src: "src/assets/Events/weekend_events/Poster_1.jpg", alt: "Campus to Corporate" },
+  { id: 4, src: "src/assets/Events/weekend_events/Poster_23.jpg", alt: "Poster making" },
+  { id: 5, src: "src/assets/Events/IEEE_DAY/IEEE_DAY_1.jpg", alt: "IEEE DAY" },
+  { id: 6, src: "src/assets/Events/IEEE_DAY/IEEE_DAY_14.jpg", alt: "IEEE DAY" },
   { id: 7, src: "src/assets/Events/AESS-poster.jpg", alt: "AESS Poster" },
   { id: 8, src: "src/assets/Events/cyberquest.jpg", alt: "Cyber Quest" },
 ];

@@ -24,25 +24,32 @@ const WIE = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-200">
-      {/* Hero Section - Black Theme with Larger WIE Title */}
+      {/* Hero Section */}
       <motion.div 
         className="p-8 bg-gradient-to-r from-gray-900 to-purple-900 text-white text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        {/* Added Official WIE Logo */}
+        {/* WIE Logo */}
         <motion.div 
           className="flex justify-center mb-6"
           initial={{ scale: 0.5 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <img 
-            src="https://entrepreneurship.ieee.org/wp-content/uploads/2020/04/WIE-Logo-250x250-1.png" 
-            alt="IEEE Women in Engineering Logo" 
-            className="h-32 mx-auto border rounded-full shadow-lg hover:shadow-purple-500/50 transition-shadow duration-300"
-          />
+          <a 
+            href="https://wie.ieee.org/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <img 
+              src="https://wie.ieee.org/wp-content/uploads/2021/01/wie-logo.png" 
+              alt="IEEE Women in Engineering Logo" 
+              className="h-32 mx-auto border rounded-full shadow-lg hover:shadow-purple-500/50 transition-shadow duration-300"
+            />
+          </a>
         </motion.div>
         <motion.h1 
           className="text-6xl md:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400"
@@ -68,6 +75,14 @@ const WIE = () => {
             creating supportive spaces for learning, networking, and
             professional growth.
           </p>
+          <a 
+            href="https://wie.ieee.org/membership/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block mt-6 px-8 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors duration-300"
+          >
+            Join IEEE WIE
+          </a>
         </motion.div>
       </motion.div>
 
@@ -154,129 +169,35 @@ const WIE = () => {
               </div>
             </motion.div>
 
-            {/* Coordinator */}
+            {/* Chair */}
             <motion.div 
               className="bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-700 hover:border-purple-500 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
-              transition={{ delay: 0.2 }}
             >
               <div className="flex flex-col sm:flex-row">
                 <div className="sm:w-1/3">
                   <img
                     src="/api/placeholder/300/300"
-                    alt="Student Coordinator"
+                    alt="WIE Chair"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-6 sm:w-2/3">
                   <h3 className="text-xl font-bold text-white mb-1">
-                    Samantha Chen
+                    Shrusti Utturkar
                   </h3>
                   <p className="text-purple-400 font-semibold mb-3">
-                    Student Coordinator
+                    WIE Chair
                   </p>
                   <p className="text-gray-400 text-sm">
-                    Final Year, Computer Science Engineering
+                    Electronics and Communication Engineering
                   </p>
                   <p className="text-gray-400 text-sm mt-2">
-                    IEEE Student Member since 2023
-                  </p>
-                  <p className="text-gray-400 text-sm mt-2">
-                    Email: samantha.chen@student.jce.edu
+                    IEEE Student Member
                   </p>
                 </div>
               </div>
-            </motion.div>
-          </div>
-
-          {/* Committee Members */}
-          <motion.h3 
-            className="text-2xl font-bold text-center text-purple-400 mt-12 mb-6"
-            {...fadeIn}
-          >
-            Committee Members
-          </motion.h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Member 1 */}
-            <motion.div 
-              className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              {...fadeIn}
-            >
-              <img
-                src="/api/placeholder/150/150"
-                alt="Committee Member"
-                className="w-24 h-24 object-cover rounded-full mx-auto mb-3 ring-2 ring-purple-500"
-              />
-              <h4 className="text-lg font-bold text-white">Shrusti Utturkar</h4>
-              <p className="text-purple-400">WIE Chair</p>
-            </motion.div>
-
-            {/* Member 2 */}
-            <motion.div 
-              className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              {...fadeIn}
-              transition={{ delay: 0.1 }}
-            >
-              <img
-                src="/api/placeholder/150/150"
-                alt="Committee Member"
-                className="w-24 h-24 object-cover rounded-full mx-auto mb-3 ring-2 ring-purple-500"
-              />
-              <h4 className="text-lg font-bold text-white">
-                Shreya Dappadhuli
-              </h4>
-              <p className="text-purple-400">WIE Vice-Chair</p>
-            </motion.div>
-
-            {/* Member 3 */}
-            <motion.div 
-              className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              {...fadeIn}
-              transition={{ delay: 0.2 }}
-            >
-              <img
-                src="/api/placeholder/150/150"
-                alt="Committee Member"
-                className="w-24 h-24 object-cover rounded-full mx-auto mb-3 ring-2 ring-purple-500"
-              />
-              <h4 className="text-lg font-bold text-white">Sharada Ugare</h4>
-              <p className="text-purple-400">WIE Secretary</p>
-            </motion.div>
-
-            {/* Member 4 */}
-            <motion.div 
-              className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              {...fadeIn}
-              transition={{ delay: 0.3 }}
-            >
-              <img
-                src="/api/placeholder/150/150"
-                alt="Committee Member"
-                className="w-24 h-24 object-cover rounded-full mx-auto mb-3 ring-2 ring-purple-500"
-              />
-              <h4 className="text-lg font-bold text-white">Namrata Patil</h4>
-              <p className="text-purple-400">WIE Treasurer</p>
-            </motion.div>
-
-            {/* Member 5 */}
-            <motion.div 
-              className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              {...fadeIn}
-              transition={{ delay: 0.4 }}
-            >
-              <img
-                src="/api/placeholder/150/150"
-                alt="Committee Member"
-                className="w-24 h-24 object-cover rounded-full mx-auto mb-3 ring-2 ring-purple-500"
-              />
-              <h4 className="text-lg font-bold text-white">Samuilla Kustagi</h4>
-              <p className="text-purple-400">Media Head</p>
             </motion.div>
           </div>
         </div>
@@ -312,7 +233,7 @@ const WIE = () => {
                       International Women's Day
                     </h3>
                     <span className="text-sm bg-purple-900 text-purple-200 px-2 py-1 rounded">
-                      March 8, 2025
+                      March 8, 2024
                     </span>
                   </div>
                   <p className="text-gray-300 mb-4">
@@ -330,8 +251,6 @@ const WIE = () => {
                 </div>
               </div>
             </motion.div>
-
-            {/* Add more events here */}
           </div>
         </div>
       </div>
@@ -339,37 +258,64 @@ const WIE = () => {
       {/* Gallery Section */}
       <div className="p-8 bg-gray-900">
         <div className="max-w-5xl mx-auto">
-          <motion.h2 
-            className="text-3xl font-bold text-center text-purple-400 mb-8"
-            {...fadeIn}
-          >
-            Gallery
-          </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {galleryImages.map((image, index) => (
-              <motion.div 
-                key={index}
-                className="bg-gray-800 p-2 rounded shadow border border-gray-700 hover:border-purple-500 transition-all duration-300 overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                {...fadeIn}
-                transition={{ delay: index * 0.1 }}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-40 object-cover rounded transform hover:scale-110 transition-transform duration-300"
-                />
-              </motion.div>
-            ))}
+          <div className="text-center mb-12">
+            <motion.h2 
+              className="text-3xl font-bold text-purple-400 mb-4"
+              {...fadeIn}
+            >
+              Gallery
+            </motion.h2>
+            <div className="w-20 h-0.5 bg-purple-500 mx-auto"></div>
           </div>
-          <motion.div 
-            className="text-center mt-6"
-            {...fadeIn}
-          >
-            <button className="bg-purple-700 text-white px-6 py-2 rounded-full shadow hover:bg-purple-600 transition-all duration-300 transform hover:scale-105">
-              View More Photos
-            </button>
-          </motion.div>
+
+          <div className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
+            <div className="p-10">
+              {/* Classic Message */}
+              <div className="text-center mb-12">
+                <h3 className="text-2xl font-serif text-white mb-4">Our Moments</h3>
+                <p className="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+                  Celebrating women in engineering through our events and initiatives. 
+                  Each image represents our commitment to empowering and inspiring the next 
+                  generation of women engineers.
+                </p>
+              </div>
+
+              {/* Gallery Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                {galleryImages.map((image, index) => (
+                  <motion.div 
+                    key={index}
+                    className="aspect-[4/3] bg-gray-700 rounded-lg overflow-hidden relative group"
+                    {...fadeIn}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <p className="text-white text-sm font-light">{image.alt}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Bottom Quote */}
+              <div className="mt-12 text-center">
+                <blockquote className="text-gray-400 italic font-serif text-lg">
+                  "Empowering women to shape the future of technology."
+                </blockquote>
+                <div className="mt-8">
+                  <button className="inline-flex items-center px-6 py-3 border border-purple-500 text-purple-400 rounded-lg hover:bg-purple-500 hover:text-white transition-colors duration-300">
+                    <span className="font-light">View More</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -395,10 +341,22 @@ const WIE = () => {
             transition={{ delay: 0.2 }}
           >
             <p className="text-gray-300">
-              <strong>Email:</strong> wie@jce.edu
+              <strong>Email:</strong>{" "}
+              <a href="mailto:wie@jce.edu" className="hover:text-purple-400 transition-colors duration-300">
+                wie@jce.edu
+              </a>
             </p>
             <p className="text-gray-300">
-              <strong>Instagram:</strong> @ieee_wie_jce
+              <strong>Instagram:</strong>{" "}
+              <a href="https://www.instagram.com/ieee_wie_jce" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors duration-300">
+                @ieee_wie_jce
+              </a>
+            </p>
+            <p className="text-gray-300 mt-4">
+              <strong>Official IEEE WIE:</strong>{" "}
+              <a href="https://wie.ieee.org" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">
+                wie.ieee.org
+              </a>
             </p>
           </motion.div>
           <motion.div 
@@ -406,15 +364,30 @@ const WIE = () => {
             {...fadeIn}
             transition={{ delay: 0.3 }}
           >
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110">
+            <a 
+              href="https://www.facebook.com/ieeewomen" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110"
+            >
               <i className="fab fa-facebook-f"></i>
-            </button>
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110">
+            </a>
+            <a 
+              href="https://www.linkedin.com/company/ieee-women-in-engineering" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110"
+            >
               <i className="fab fa-linkedin-in"></i>
-            </button>
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110">
+            </a>
+            <a 
+              href="https://twitter.com/ieeewomen" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110"
+            >
               <i className="fab fa-twitter"></i>
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>
@@ -422,4 +395,4 @@ const WIE = () => {
   );
 };
 
-export default WIE;
+export default WIE; 

@@ -117,7 +117,7 @@ const Execoms = () => {
       category: "wie"
     },
     {
-      position: "chair",
+      position: "WIE Treasurer",
       name: "Namrata Mohan Patil",
       affiliation: "Jain College of Engineering, Belagavi",
       ieeeNumber: "99874209",

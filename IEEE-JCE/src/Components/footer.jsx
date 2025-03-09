@@ -77,15 +77,13 @@ const Footer = () => {
             <h5 className="text-white font-semibold mb-4">Societies</h5>
             <ul className="space-y-2">
               <li><a href="https://www.computer.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Computer Society</a></li>
-              
-              
               <li><a href="https://wie.ieee.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Women in Engineering</a></li>
               <li><a href="https://ieee-aess.org/" className="text-gray-300 hover:text-blue-400 transition duration-300 no-underline">Aerospace and Electronic Systems Society</a></li>
             </ul>
           </div>
 
           {/* Column 4 - Contact Us */}
-          <div className="text-center md:text-left">
+          <div className="text-center justify-center items-center md:text-left">
             <h5 className="text-white font-semibold mb-4">Contact Us</h5>
             <ul className="space-y-2">
               <li className="text-gray-300">599/2 T.S. Nagar Hunchanhatti Road</li>
@@ -93,6 +91,41 @@ const Footer = () => {
               <li className="text-gray-300">Phone: +91 831 2411192</li>
               <li className="text-gray-300">Email: info[at]jainbgm.in</li>
             </ul>
+            {/* Social Media Links */}
+            <div className="mt-4 flex justify-center space-x-4">
+              <a
+                href="https://wa.me/your-whatsapp-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-green-500 transition duration-300"
+              >
+                <i className="fab fa-whatsapp text-2xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/your-instagram-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-pink-500 transition duration-300"
+              >
+                <i className="fab fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/your-linkedin-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-blue-500 transition duration-300"
+              >
+                <i className="fab fa-linkedin text-2xl"></i>
+              </a>
+              <a
+                href="https://twitter.com/your-x-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-purple-900 transition duration-300"
+              >
+                <i class="fa-brands fa-x-twitter text-2xl"></i>
+              </a>
+            </div>
           </div>
         </div>
 
