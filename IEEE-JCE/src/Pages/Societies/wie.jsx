@@ -373,51 +373,7 @@ const WIE = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
-      <div className="p-8 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
-            className="text-3xl font-bold text-purple-400 mb-6"
-            {...fadeIn}
-          >
-            Contact Us
-          </motion.h2>
-          <motion.p 
-            className="text-lg text-gray-300 mb-4"
-            {...fadeIn}
-            transition={{ delay: 0.1 }}
-          >
-            Have questions or want to get involved? Reach out to us!
-          </motion.p>
-          <motion.div 
-            className="space-y-2"
-            {...fadeIn}
-            transition={{ delay: 0.2 }}
-          >
-            <p className="text-gray-300">
-              <strong>Email:</strong> wie@jce.edu
-            </p>
-            <p className="text-gray-300">
-              <strong>Instagram:</strong> @ieee_wie_jce
-            </p>
-          </motion.div>
-          <motion.div 
-            className="flex justify-center gap-4 mt-6"
-            {...fadeIn}
-            transition={{ delay: 0.3 }}
-          >
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110">
-              <i className="fab fa-facebook-f"></i>
-            </button>
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110">
-              <i className="fab fa-linkedin-in"></i>
-            </button>
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-purple-700 transition-all duration-300 transform hover:scale-110">
-              <i className="fab fa-twitter"></i>
-            </button>
-          </motion.div>
-        </div>
-      </div>
+      
     </div>
   );
 };

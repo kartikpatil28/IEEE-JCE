@@ -77,9 +77,9 @@ function Navbar() {
     <>
       {/* IEEE Global Navigation Bar */}
       <div className="w-full bg-black text-sm border-b border-blue-900 shadow-sm py-2">
-        <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+        <div className="max-w-screen-xl mx-auto px-4 md:px-6 flex justify-center md:justify-between items-center">
           {/* Mobile View - IEEE Logo centered */}
-          <div className="md:hidden flex justify-center mb-2">
+          <div className="md:hidden">
             <a
               href="https://www.ieee.org"
               target="_blank"
@@ -88,14 +88,14 @@ function Navbar() {
             >
               <img
                 src="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/globals/88857.gif"
-                className="h-8"
+                className="h-12"
                 alt="IEEE Logo"
               />
             </a>
           </div>
 
           {/* Desktop View - IEEE Links and Logo */}
-          <div className="hidden md:flex justify-between items-center">
+          <div className="hidden md:flex justify-between items-center w-full">
             <ul className="flex flex-wrap gap-2 md:gap-5">
               {ieeeLinks.map((link, index) => (
                 <li key={index} className="relative group">
@@ -135,7 +135,7 @@ function Navbar() {
             >
               <img
                 src="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/globals/88857.gif"
-                className="h-8"
+                className="h-12"
                 alt="IEEE Logo"
               />
             </a>
@@ -155,7 +155,7 @@ function Navbar() {
             <img
               src={jceLogo}
               alt="JCE Logo"
-              className="h-20 md:h-24 object-contain filter drop-shadow-md hover:brightness-110 transition-all"
+              className="h-32 md:h-28 object-contain filter drop-shadow-md hover:brightness-110 transition-all"
             />
           </div>
 
@@ -271,81 +271,129 @@ function Navbar() {
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
                   transition={{ duration: 0.3 }}
-                  className="fixed right-0 top-0 h-full w-4/5 bg-black p-6 overflow-y-auto"
+                  className="fixed right-0 top-0 h-screen w-4/5 bg-black overflow-y-auto"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Mobile Menu Content */}
-                  <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-xl font-bold text-white">Menu</h2>
-                    <button
-                      onClick={toggleMenu}
-                      className="text-white hover:bg-white/10 p-2 rounded-full transition-colors"
-                    >
-                      <i className="fa fa-times"></i>
-                    </button>
-                  </div>
-
-                  {/* Navigation Links */}
-                  <ul className="space-y-2">
-                    {links.map((link) => (
-                      <li key={link.name}>
-                        <NavLink
-                          to={link.path}
-                          onClick={() => handleLinkClick(link.path)}
-                          className={({ isActive }) =>
-                            `block px-4 py-3 rounded-lg transition-colors ${
-                              isActive
-                                ? "bg-blue-900/30 text-white font-semibold"
-                                : "text-gray-300 hover:bg-blue-900/20 hover:text-white"
-                            }`
-                          }
-                        >
-                          {link.name}
-                        </NavLink>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Societies Section */}
-                  <div className="mt-6">
-                    <h3 className="px-4 text-sm font-semibold text-gray-400 uppercase mb-2">
-                      Societies
-                    </h3>
-                    <div className="space-y-1">
-                      {[
-                        { name: "AESS", path: "/societies/aess" },
-                        { name: "Computer Society (CS)", path: "/societies/cs" },
-                        { name: "Women in Engineering (WIE)", path: "/societies/wie" }
-                      ].map((society) => (
-                        <button
-                          key={society.name}
-                          onClick={() => handleSocietiesClick(society.path, society.name)}
-                          className={`block w-full px-4 py-3 text-left rounded-lg transition-colors ${
-                            activeSociety === society.name
-                              ? "bg-blue-900/30 text-white font-semibold"
-                              : "text-gray-300 hover:bg-blue-900/20 hover:text-white"
-                          }`}
-                        >
-                          {society.name}
-                        </button>
-                      ))}
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-6">
+                      <h2 className="text-xl font-bold text-white">IEEE JCE</h2>
+                      <button
+                        onClick={toggleMenu}
+                        className="text-white hover:bg-white/10 p-2 rounded-full transition-colors"
+                      >
+                        <i className="fa fa-times"></i>
+                      </button>
                     </div>
-                  </div>
 
-                  {/* Social Links */}
-                  <div className="mt-8 pt-6 border-t border-white/10">
-                    <div className="flex justify-center gap-4">
-                      {socialLinks.map((link, index) => (
-                        <a
-                          key={index}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-full bg-blue-900/20 flex items-center justify-center text-gray-300 hover:bg-blue-900/30 hover:text-white transition-colors"
-                        >
-                          <i className={`fab fa-${link.icon}`}></i>
-                        </a>
-                      ))}
+                    {/* Logo display */}
+                    <div className="mb-6 bg-gradient-to-br from-white/10 to-white/5 p-3 rounded-xl flex items-center justify-center border border-white/20 shadow-lg">
+                      <img src={jceLogo} alt="JCE Logo" className="h-20" />
+                    </div>
+
+                    {/* Navigation Links */}
+                    <div className="mb-6 overflow-y-auto">
+                      <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">
+                        Navigation
+                      </h3>
+                      <ul className="flex flex-col gap-2">
+                        {links.map((link) => (
+                          <li key={link.name}>
+                            <NavLink
+                              to={link.path}
+                              onClick={() => {
+                                toggleMenu();
+                                handleLinkClick(link.path);
+                              }}
+                              className={({ isActive }) =>
+                                `block px-4 py-3 rounded-lg transition-colors ${
+                                  isActive
+                                    ? "bg-blue-900/30 text-white font-semibold"
+                                    : "text-gray-300 hover:bg-blue-900/20 hover:text-white"
+                                }`
+                              }
+                            >
+                              {link.name}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Societies Section */}
+                    <div className="mb-6">
+                      <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">
+                        Societies
+                      </h3>
+                      <div className="space-y-1">
+                        {[
+                          { name: "AESS", path: "/societies/aess" },
+                          { name: "Computer Society (CS)", path: "/societies/cs" },
+                          { name: "Women in Engineering (WIE)", path: "/societies/wie" }
+                        ].map((society) => (
+                          <button
+                            key={society.name}
+                            onClick={() => {
+                              handleSocietiesClick(society.path, society.name);
+                              toggleMenu();
+                            }}
+                            className="block w-full px-4 py-3 text-left rounded-lg text-gray-300 hover:bg-blue-900/20 hover:text-white transition-colors"
+                          >
+                            {society.name}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* IEEE Links */}
+                    <div className="mb-6">
+                      <h3 className="text-sm uppercase text-blue-300 mb-3 font-semibold">
+                        IEEE Links
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {ieeeLinks.map((link, index) => (
+                          link.name === "More Sites" ? (
+                            <NavLink
+                              key={index}
+                              to={link.url}
+                              onClick={() => {
+                                toggleMenu();
+                                handleLinkClick(link.url);
+                              }}
+                              className="text-sm text-blue-300 bg-blue-900/20 px-3 py-1.5 rounded-md hover:bg-blue-900/30 transition-colors"
+                            >
+                              {link.name}
+                            </NavLink>
+                          ) : (
+                            <a
+                              key={index}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm text-blue-300 bg-blue-900/20 px-3 py-1.5 rounded-md hover:bg-blue-900/30 transition-colors"
+                            >
+                              {link.name === "IEEE Xplore Digital Library" ? "IEEE Xplore" : link.name}
+                            </a>
+                          )
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="mt-6 pt-6 border-t border-white/10">
+                      <div className="flex justify-center gap-4">
+                        {socialLinks.map((link, index) => (
+                          <a
+                            key={index}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 rounded-full bg-blue-900/20 flex items-center justify-center text-gray-300 hover:bg-blue-900/30 hover:text-white transition-colors"
+                          >
+                            <i className={`fab fa-${link.icon}`}></i>
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>

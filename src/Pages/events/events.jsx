@@ -16,11 +16,19 @@ const fetchEventData = async () => {
         // Past events data with actual events
         pastEvents: [
           {
-            title: "Women's Day Celebration",
+            title: "Women's Day Celebration 2024",
             date: "March 8, 2024",
-            description: "International Women's Day celebration featuring keynote speeches from prominent female leaders in technology, panel discussions on women empowerment in STEM fields, and interactive workshops.",
+            description: "IEEE Women in Engineering (WIE) at JCE celebrated International Women's Day with the theme 'Inspire Inclusion.' The event featured an inspiring keynote address by Dr. Suma M S, Professor at RVCE, who shared insights on 'Women in Technology: Breaking Barriers and Building Futures.' The celebration included a panel discussion on 'Navigating Career Challenges' with successful women leaders from various tech companies. Students participated in a technical project showcase highlighting innovations by women engineers. The event concluded with an interactive workshop on 'Leadership and Personal Branding' and cultural performances celebrating women's achievements.",
             image: wieWD1,
-            highlights: ["50+ participants", "Industry speakers", "Panel discussions", "Interactive workshops"]
+            highlights: [
+              "100+ participants",
+              "Keynote by Dr. Suma M S",
+              "Industry Panel Discussion",
+              "Technical Project Showcase",
+              "Leadership Workshop",
+              "Cultural Performances",
+              "Networking Session"
+            ]
           },
           {
             title: "Technical Paper Writing Workshop",

@@ -162,34 +162,7 @@ const ComputerSociety = () => {
         </div>
       </div>
 
-      {/* Contact Section - Black Theme */}
-      <div className="p-8 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-green-400 mb-6">
-            Contact Us
-          </h2>
-          <p className="text-lg text-gray-300 mb-4">
-            Have questions or want to get involved? Reach out to us!
-          </p>
-          <p className="text-gray-300">
-            <strong>Email:</strong> cs@jce.edu
-          </p>
-          <p className="text-gray-300">
-            <strong>Instagram:</strong> @ieee_cs_jce
-          </p>
-          <div className="flex justify-center gap-4 mt-4">
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-green-700 transition">
-              f
-            </button>
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-green-700 transition">
-              in
-            </button>
-            <button className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-green-700 transition">
-              t
-            </button>
-          </div>
-        </div>
-      </div>
+     
     </div>
   );
 };

@@ -7,150 +7,183 @@ import "slick-carousel/slick/slick-theme.css";
 const allImages = [
   // WIE Women's Day Events
   {
-    source: new URL("../../assets/Events/WIE_WD/WIE_WD_1.jpg", import.meta.url).href,
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_1.jpg", import.meta.url)
+      .href,
     title: "Women's Day Celebration",
     description: "Celebrating International Women's Day with inspiring talks",
-    category: "WIE Events"
+    category: "WIE Events",
   },
   {
-    source: new URL("../../assets/Events/WIE_WD/WIE_WD_2.jpg", import.meta.url).href,
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_2.jpg", import.meta.url)
+      .href,
     title: "Women in Tech Panel",
     description: "Industry leaders sharing their experiences and insights",
-    category: "WIE Events"
+    category: "WIE Events",
   },
   {
-    source: new URL("../../assets/Events/WIE_WD/WIE_WD_3.jpg", import.meta.url).href,
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_3.jpg", import.meta.url)
+      .href,
     title: "Technical Workshop",
     description: "Hands-on learning session for women engineers",
-    category: "WIE Events"
+    category: "WIE Events",
   },
   {
-    source: new URL("../../assets/Events/WIE_WD/WIE_WD_4.jpg", import.meta.url).href,
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_4.jpg", import.meta.url)
+      .href,
     title: "Networking Session",
     description: "Building connections and fostering collaboration",
-    category: "WIE Events"
+    category: "WIE Events",
   },
   {
-    source: new URL("../../assets/Events/WIE_WD/WIE_WD_5.jpg", import.meta.url).href,
+    source: new URL("../../assets/Events/WIE_WD/WIE_WD_5.jpg", import.meta.url)
+      .href,
     title: "Innovation Showcase",
     description: "Demonstrating projects and innovations by women engineers",
-    category: "WIE Events"
+    category: "WIE Events",
   },
 
   // Campus to Corporate Events
   {
-    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-14.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/CTC/Campus-to-Corporate-14.jpg",
+      import.meta.url
+    ).href,
     title: "Interview Preparation",
     description: "Expert tips on acing technical interviews",
-    category: "Career Development"
+    category: "Career Development",
   },
   {
-    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-18.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/CTC/Campus-to-Corporate-18.jpg",
+      import.meta.url
+    ).href,
     title: "Industry Connect",
     description: "Interaction with corporate professionals",
-    category: "Career Development"
+    category: "Career Development",
   },
   {
-    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-5.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/CTC/Campus-to-Corporate-5.jpg",
+      import.meta.url
+    ).href,
     title: "Skill Development",
     description: "Enhancing technical and soft skills",
-    category: "Career Development"
+    category: "Career Development",
   },
   {
-    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-10.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/CTC/Campus-to-Corporate-10.jpg",
+      import.meta.url
+    ).href,
     title: "Mock Interviews",
     description: "Practice sessions with industry experts",
-    category: "Career Development"
+    category: "Career Development",
   },
   {
-    source: new URL("../../assets/Events/CTC/Campus-to-Corporate-12.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/CTC/Campus-to-Corporate-12.jpg",
+      import.meta.url
+    ).href,
     title: "Resume Building",
     description: "Creating impactful professional profiles",
-    category: "Career Development"
+    category: "Career Development",
+  },
+  {
+    source: new URL(
+      "../../assets/Aero_Talk/Career_Dr_Sushant.jpg",
+      import.meta.url
+    ).href,
+    title: "Resume Building",
+    description: "Creating impactful professional profiles",
+    category: "Career Development",
   },
 
   // IEEE Day Celebrations
   {
-    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_1.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/IEEE_DAY/IEEE_DAY_1.jpg",
+      import.meta.url
+    ).href,
     title: "IEEE Day Opening",
     description: "Kickoff ceremony of IEEE Day celebrations",
-    category: "IEEE Events"
+    category: "IEEE Events",
   },
   {
-    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_12.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/IEEE_DAY/IEEE_DAY_12.jpg",
+      import.meta.url
+    ).href,
     title: "Technical Symposium",
     description: "Showcasing latest technological advancements",
-    category: "IEEE Events"
-  },
-  {
-    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_8.jpg", import.meta.url).href,
-    title: "Team Building",
-    description: "Collaborative activities and group projects",
-    category: "IEEE Events"
-  },
-  {
-    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_5.jpg", import.meta.url).href,
-    title: "Tech Quiz",
-    description: "Testing knowledge in various technical domains",
-    category: "IEEE Events"
-  },
-  {
-    source: new URL("../../assets/Events/IEEE_DAY/IEEE_DAY_9.jpg", import.meta.url).href,
-    title: "Project Exhibition",
-    description: "Display of innovative student projects",
-    category: "IEEE Events"
+    category: "IEEE Events",
   },
 
   // Conference and Technical Events
   {
-    source: new URL("../../assets/Events/Conference/Conference-1.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/Conference/Conference-1.jpg",
+      import.meta.url
+    ).href,
     title: "Memory & Storage Summit",
     description: "Latest trends in storage technologies",
-    category: "Technical Events"
+    category: "Technical Events",
   },
   {
-    source: new URL("../../assets/Events/Conference/Conference-3.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/Conference/Conference-3.jpg",
+      import.meta.url
+    ).href,
     title: "Expert Talk",
     description: "Industry insights and future technologies",
-    category: "Technical Events"
+    category: "Technical Events",
   },
+
   {
-    source: new URL("../../assets/Events/Conference/Conference-7.jpg", import.meta.url).href,
-    title: "Panel Discussion",
-    description: "Debating emerging technology trends",
-    category: "Technical Events"
-  },
-  {
-    source: new URL("../../assets/Events/Conference/Conference-5.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/Conference/Conference-5.jpg",
+      import.meta.url
+    ).href,
     title: "Research Presentation",
     description: "Sharing innovative research findings",
-    category: "Technical Events"
+    category: "Technical Events",
   },
   {
-    source: new URL("../../assets/Events/Conference/Conference-6.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/Conference/Conference-6.jpg",
+      import.meta.url
+    ).href,
     title: "Networking Event",
     description: "Building professional connections",
-    category: "Technical Events"
+    category: "Technical Events",
   },
 
   // Weekend Activities
   {
-    source: new URL("../../assets/Events/Weekend_events/Poster_1.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/Weekend_events/Poster_1.jpg",
+      import.meta.url
+    ).href,
     title: "Weekend Workshop",
     description: "Practical learning through hands-on sessions",
-    category: "Workshops"
+    category: "Workshops",
   },
   {
-    source: new URL("../../assets/Events/Weekend_events/Poster_2.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/Weekend_events/Poster_2.jpg",
+      import.meta.url
+    ).href,
     title: "Coding Marathon",
     description: "24-hour coding challenge for innovators",
-    category: "Workshops"
+    category: "Workshops",
   },
   {
-    source: new URL("../../assets/Events/Weekend_events/Poster_3.jpg", import.meta.url).href,
+    source: new URL(
+      "../../assets/Events/Weekend_events/Poster_3.jpg",
+      import.meta.url
+    ).href,
     title: "Robotics Workshop",
     description: "Learning robotics fundamentals and applications",
-    category: "Workshops"
+    category: "Workshops",
   },
 
   // Special Events
@@ -158,8 +191,10 @@ const allImages = [
     source: new URL("../../assets/Events/cyberquest.jpg", import.meta.url).href,
     title: "CyberQuest",
     description: "Exploring cybersecurity challenges and solutions",
-    category: "Special Events"
-  }
+    category: "Special Events",
+  },
+
+ 
 ];
 
 // Rest of the component remains the same...
@@ -173,12 +208,16 @@ const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
   // Categories for filtering - dynamically generated from image data
-  const allCategories = ["All", ...new Set(allImages.map(img => img.category))];
+  const allCategories = [
+    "All",
+    ...new Set(allImages.map((img) => img.category)),
+  ];
 
   // Filtered images based on active category
-  const filteredImages = activeFilter === "All" 
-    ? allImages 
-    : allImages.filter(img => img.category === activeFilter);
+  const filteredImages =
+    activeFilter === "All"
+      ? allImages
+      : allImages.filter((img) => img.category === activeFilter);
 
   // Slider settings
   const settings = {
@@ -195,10 +234,10 @@ const Gallery = () => {
       {
         breakpoint: 768,
         settings: {
-          arrows: false
-        }
-      }
-    ]
+          arrows: false,
+        },
+      },
+    ],
   };
 
   // Open lightbox with specific image
@@ -217,7 +256,9 @@ const Gallery = () => {
     if (direction === "next") {
       setCurrentImage((currentImage + 1) % filteredImages.length);
     } else {
-      setCurrentImage((currentImage - 1 + filteredImages.length) % filteredImages.length);
+      setCurrentImage(
+        (currentImage - 1 + filteredImages.length) % filteredImages.length
+      );
     }
   };
 
@@ -225,7 +266,9 @@ const Gallery = () => {
     <div className="max-w-7xl mx-auto px-4 py-12 bg-gray-50">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-indigo-800 mb-2">IEEE Gallery</h1>
+        <h1 className="text-4xl font-bold text-indigo-800 mb-2">
+          IEEE Gallery
+        </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Showcasing our journey of innovation, learning, and growth through
           memorable events and activities
@@ -363,14 +406,15 @@ const Gallery = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <p className="text-gray-600 mb-4">
-              Our gallery showcases the vibrant activities and achievements of the IEEE Student Branch. 
-              Through these images, we capture moments of learning, innovation, and collaboration that 
-              define our journey in technical excellence.
+              Our gallery showcases the vibrant activities and achievements of
+              the IEEE Student Branch. Through these images, we capture moments
+              of learning, innovation, and collaboration that define our journey
+              in technical excellence.
             </p>
             <p className="text-gray-600">
-              From technical workshops to cultural events, each image represents our commitment to 
-              fostering a dynamic environment where students can grow, learn, and excel in their 
-              chosen fields.
+              From technical workshops to cultural events, each image represents
+              our commitment to fostering a dynamic environment where students
+              can grow, learn, and excel in their chosen fields.
             </p>
           </div>
           <div className="bg-indigo-50 rounded-lg p-6">
