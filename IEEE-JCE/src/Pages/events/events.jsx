@@ -9,25 +9,114 @@ const fetchEventData = async () => {
         // Past events data
         pastEvents: [
           {
-            title: "",
-            date: "January 15, 2025",
-            description: "Hands-on workshop covering HTML, CSS, and JavaScript fundamentals",
-            image: "/api/placeholder/600/400",
-            highlights: ["100+ participants", "Industry mentors", "Project showcase"]
+            title: "A talk on 'Navigating Success: A Roadmap For Placement Excellence' By Alumni",
+            date: "2024-01-17",
+            description: "Around 100 students have attended this talk and the presence of all the department faculty made the event successful. Alumni Miss Bhoomika Kadabi explained the importance of oncampus and also highlighted on the process of interview. And also explained how to prepare for the interview, what are do’s and don’ts of resume writing. At the outset the event was successful as alumni shared her experience as a student as well as a professional.",
+            image: "src/assets/Events/CTC/Campus-to-Corporate-2.jpg",
+            highlights: ["100+ participants", "Industry mentors","Alumni", "Guidance"]
           },
           {
-            title: "IoT Seminar",
-            date: "December 10, 2024",
-            description: "Expert-led seminar on Internet of Things technologies and applications",
-            image: "/api/placeholder/600/400",
-            highlights: ["Live demonstrations", "Q&A session", "Networking"]
+            title: "TechTriva, a technical quiz",
+            date: "17/02/2024",
+            description: "The intention of this technical quiz is to evaluate one’s own understanding in the field of AI, 5G and Engineering life. JCE IEEE student branch conducted technical quiz on AI , 5G and Engineering life for all the students across the department on 17th Feb 2024.",
+            image: "src/assets/Events/Techtriva.jpg",
+            highlights: ["5G", "AI", "Aptitude"]
           },
           {
-            title: "Code Jam 2024",
-            date: "November 5, 2024",
-            description: "Competitive programming contest with over 100 participants",
-            image: "/api/placeholder/600/400",
-            highlights: ["5 challenging rounds", "Cash prizes", "Recruitment opportunities"]
+            title: "Inauguration of IEEE-WIE-AESS student chapter 2024",
+            date: "04/03/2024",
+            description:
+             "IEEE SB, WiE & AESS was inaugurated on 4th March 2024. The basic objective is to make students aware of the basic motto of IEEE, WiE and AESS students branch chapters which provides a platform to students where they can interact with their peer group from around the section and also with the professional members from around the globe. Several activities that would help the students in fostering their core knowledge and at the same time nurture their leadership and managerial skills are being planned as a part of the academic year.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Inaugration","IEEE","WIE","AESS"]
+          },
+          {
+            title: "Celebration of International Women's Day on the Theme of 'Inspire Inclusion'",
+            date: "13 MARCH 2024",
+            description: 
+            "The session was organized by the Student Engagement Cell in association with PHC Kineye,NSS Unit-1 and JCE IEEE, WIE STUDENT BRANCH. The speakers were Dr. Chandra Metgud,Professor in Dept. Of Community Medicine, JNMC and Dr. Rajesh Kulkarni, Associate Professor in Dept. Of Community Medicine, JNMC. Our Guests gave us an excellent talk on Importance of Women Empowerment followed by an oath taking ceremony by the JNMC Students as well. The event started with a JGI prayer and Innovation song. Principal and Director Dr. J. Shivakumar addressed the gathering followed by Dr. Chandra Metgud and Inspector Dr. Rajesh Kulkarni who spoke on the importance of women's day and Electoral ID card/voting. Prof. Deepali Patil proposed the vote of thanks. The venue was Sir. M. V. Auditorium and the time was 12 PM.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Community Service","Women's Day","Electoral ID card/voting"]
+          },
+          {
+            title: "5th International Conference of Emerging Technologies INCET – 2024, Technically Co-sponsored by IEEE Bangalore Section.",
+            date: "24/05/2024",
+            description: "Top themes that emerged when comparing the insights gained at each of the conference: The theme ofthe conference is “Emerging Technologies”. INCET is the place where researchers and practitioners canbring together different perspectives to address a common goal. INCET-2024 is the premier conferenceof Asian Pacific exchanging technical research in Emerging in Technology and provides attendees with a unique opportunity to present their research work.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Conference","Emerging Technologies","Research"]
+          },
+          {
+            title: "Career guidance for ECE students in Défense and Aerospace",
+            date: "19-06-2024",
+            description: "At the outset around 60 students were attended the talk.Overall students understood that the aerospace and defense industry is one of the critical sectors of the global economy. It drives innovation, creates jobs and industries, and has a massive impact on international and national security. Students had good interaction with resource person Mr Amit Pathak Regional director Asia Pacific defence sustainment customer and account management, collins aerospace.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Defense","Aerospace","Industry"]
+          },
+          {
+            title: "Expert Talk on 'Entrepreneurisl Development & Small Business Enterprise'",
+            date: "01-07-2024",
+            description: "At the outset around 96 students have attended the talk.verall students able to understand entrepreneurship, essential Communication skills for their career, sources of business ideas, how to identify a business opportunity. Key characteristics of a promising business opportunity. Students got the knowledge about how to write a good business Plan and how to create a financial plan for your set up. Students had good interaction with resource person Dr. Poornima M.Charantimath Emeritus Professor, IEMS Hubli and GM University, Davangere <br>Event was conducted for 6th semester students to give information how entrepreneurs bring new ideas and solutions to the market, fostering innovation and pushing industries forward and introduce the students regarding how small businesses are significant contributors to employment generation. They create jobs not only directly through their own operations but also indirectly through their supply chains and support services. At the outset around 96 students have attended the talk. Overall students. Students had good interaction with resource person Dr. Poornima Charanthimath.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Accountability", "Continuous learning", "Competency", "Team Work", "Holistic Development", "Societal Responsibility"]
+          },
+          {
+            title: "Campus to corporate",
+            date: "15-07-2024",
+            description: "Main objective of the event is to improve students' chances of securing employment by equipping them with the necessary skills, such as resume writing, interview techniques, and professional etiquette. To instil a sense of professionalism, including corporate ethics, work culture, and the importance of punctuality and responsibility.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Resume Writing", "Interview Techniques", "Professional Etiquette"]
+          },
+          {
+            title: "Teacher’s Day celebration",
+            date: "5th September 2024",
+            description: "The objective of the event was to celebrate Teacher's Day, honoring the contributions of educators and fostering a sense of appreciation and respect for the teaching profession within the Department of Electronics and Communication at Jain College of Engineering, Belagavi. The involvement of the IEEE student branch suggests a further objective of promoting student engagement and leadership within the department.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Teacher's Day", "Celebration", "Department of Electronics and Communication"]
+          },
+          {
+            title: "IEEE Day celebration",
+            date: "5th October 2024",
+            description: "The IEEE Day 2024 celebration at Jain College of Engineering, Belagavi, organized by the IEEE student branch, aimed to commemorate the contributions of the Institute of Electrical and Electronics Engineers (IEEE) to the field of technology and engineering. The event celebrated the achievements of the IEEE and its members, highlighting the importance of technology and innovation in shaping the future.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["IEEE Day", "Celebration", "Department of Electronics and Communication"]
+          },
+          {
+            title: "Tech Talk on Career Guidance",
+            date: "23rd October 2024",
+            description: "Dr. Sushant Mutagekar from IIT Madras delivered the talk on October 23, 2024, at the Sir M. Visvesvaraya Hall in Jain College of Engineering. The event was facilitated by the IEEE AESS (Aerospace and Electronic Systems Society) student branch chapter. Photos show Dr. Mutagekar delivering the talk and receiving a memento, indicating appreciation for his contribution. Professors G.P. Kadam and Deepali Patil coordinated the event, while Prof. V.R. Bagali (HOD) and Dr. J. Shivakumar (Principal & Director) oversaw it. The presence of an audience suggests that students from the Electronics and Communication Engineering department, and possibly other departments, attended the talk.",
+
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Career Guidance", "Department of Electronics and Communication"]
+          },
+          {
+            title: "IEEE XTREAM 24h Hackathon",
+            date: "26TH October 2024",
+            description: "The IEEE Xtreme 2024 programming competition, hosted by the Jain College of Engineering, Belagavi, IEEE Student Branch, aimed to provide students with a challenging and engaging platform to test and enhance their programming skills. The objective was to foster a competitive spirit, encourage teamwork and problem-solving, and promote interest in computer science and programming among the student community. It also likely served as a way to identify and recognize talented programmers within the college.The competition involved teams of students working together to solve a set of programming problems within a specified time frame. The photos depict students actively engaged in coding on their laptops, indicating the hands-on nature of the competition. A group photo shows the participants and organizers, highlighting the collaborative atmosphere of the event. While specific details about the competition format and results are not available in the provided images, the overall focus was clearly on promoting programming skills and fostering a competitive environment among students.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Programming", "Competition", "Teamwork"]
+          },
+          {
+            title: "IEEE Day celebration",
+            date: "8th and 9th November 2024",
+            description: "The objective of the IEEE Membership Drive 2024, hosted by the Department of Electronics and Communication at Jain College of Engineering, Belagavi, in association with IEEE WIE (Women in Engineering) and AESS (Aerospace and Electronic Systems Society), was to recruit new student members for the IEEE student branch. The drive aimed to increase student participation in IEEE activities, expose them to the benefits of IEEE membership (such as access to technical resources, networking opportunities, and professional development), and expand the reach and impact of the IEEE student branch within the college.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Membership Drive", "IEEE", "WIE", "AESS"]
+          },
+
+          {
+            title: "Github Workshop",
+            date: "16th November 2024",
+            description: "The GitHub Workshop, organized by the Department of Electronics and Communication at Jain College of Engineering, Belagavi, in association with WIE and AESS, aimed to equip students with practical skills in using GitHub for collaborative coding and project management. The objective was to enhance students' technical abilities, specifically in version control, collaborative workflows, and best practices for using GitHub as a professional tool. This workshop intended to empower students with valuable skills relevant to software development and collaborative projects.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["GitHub", "Collaborative Coding", "Project Management"]
+          },
+
+          {
+            title: "Unlocking Success: A Roadmap to Placement Excellence",
+            date: "23 November 2024",
+            description: "The primary objective was to guide and prepare students, specifically those in Electronics and Communication Engineering, for successful placement outcomes. This was achieved by providing a roadmap, insights, and practical advice from an industry professional and alumna, Bhoomika Kadabi.",
+            image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
+            highlights: ["Placement"]
           },
         ],
         // Upcoming events data
