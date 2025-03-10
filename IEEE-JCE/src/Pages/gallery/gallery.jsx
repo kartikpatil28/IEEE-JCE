@@ -14,17 +14,35 @@ const allImages = [
     category: "WIE Events",
   },
   {
+    source: new URL(
+      "../../assets/Events/CTC/Campus-to-Corporate-5.jpg",
+      import.meta.url
+    ).href,
+    title: "Skill Development",
+    description: "Enhancing technical and soft skills",
+    category: "Career Development",
+  },
+  {
     source: new URL("../../assets/Events/WIE_WD/WIE_WD_2.jpg", import.meta.url)
       .href,
-    title: "Women in Tech Panel",
-    description: "Industry leaders sharing their experiences and insights",
+    title: "Poster Making Competition",
+    description: "Craft & Create",
     category: "WIE Events",
+  },
+  {
+    source: new URL(
+      "../../assets/Events/Conference/Conference-5.jpg",
+      import.meta.url
+    ).href,
+    title: "Research Presentation",
+    description: "Sharing innovative research findings",
+    category: "Technical Events",
   },
   {
     source: new URL("../../assets/Events/WIE_WD/WIE_WD_3.jpg", import.meta.url)
       .href,
-    title: "Technical Workshop",
-    description: "Hands-on learning session for women engineers",
+    title: "Poster Making Competition",
+    description: "Creativity & Innovation",
     category: "WIE Events",
   },
   {
@@ -61,15 +79,7 @@ const allImages = [
     description: "Interaction with corporate professionals",
     category: "Career Development",
   },
-  {
-    source: new URL(
-      "../../assets/Events/CTC/Campus-to-Corporate-5.jpg",
-      import.meta.url
-    ).href,
-    title: "Skill Development",
-    description: "Enhancing technical and soft skills",
-    category: "Career Development",
-  },
+ 
   {
     source: new URL(
       "../../assets/Events/CTC/Campus-to-Corporate-10.jpg",
@@ -138,15 +148,7 @@ const allImages = [
     category: "Technical Events",
   },
 
-  {
-    source: new URL(
-      "../../assets/Events/Conference/Conference-5.jpg",
-      import.meta.url
-    ).href,
-    title: "Research Presentation",
-    description: "Sharing innovative research findings",
-    category: "Technical Events",
-  },
+ 
   {
     source: new URL(
       "../../assets/Events/Conference/Conference-6.jpg",

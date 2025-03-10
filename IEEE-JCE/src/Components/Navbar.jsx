@@ -87,7 +87,7 @@ function Navbar() {
               className="inline-block"
             >
               <img
-                src="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/globals/88857.gif"
+                src="https://th.bing.com/th/id/R.2f05fde9d13625128ae97420e975fba0?rik=nVfgCJV%2bu72Lrg&riu=http%3a%2f%2ftttc-vts.org%2fpublic_html%2fnew%2f2017%2fwp-content%2fuploads%2fieee-logo_blue-banner.png&ehk=mZvXsGP%2fI0c4UyHy8qzx1rYdXd3yKv2fG7HCkmGkKqk%3d&risl=&pid=ImgRaw&r=0"
                 className="h-10"
                 alt="IEEE Logo"
               />

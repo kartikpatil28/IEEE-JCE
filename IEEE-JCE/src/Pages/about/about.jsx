@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaUsers, FaTrophy, FaQuoteLeft, FaArrowRight } from "react-icons/fa";
 import { GiAchievement } from "react-icons/gi";
+import { Link } from "react-router-dom";
 import TimelineSection from "./TimelineSection";
 
 const AboutPage = () => {
@@ -396,19 +397,19 @@ const AboutPage = () => {
             Become part of a vibrant network of innovators, creators, and future tech leaders. The IEEE JCE Student Branch awaits you!
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <a
-              href="/join"
+            <Link
+              to="/membership"
               className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 hover:shadow-lg transition-all duration-300 flex items-center"
             >
               Join IEEE JCE
               <FaArrowRight className="ml-2" />
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:bg-opacity-10 transition-all duration-300"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -440,7 +441,7 @@ const achievements = [
 const testimonials = [
   {
     quote:
-      "Throughout the year, our team successfully organized and executed a series of impactful events, including Creative Eye Photography Competition, Hackathon Code Quest, IEEE Day Celebrations, NKCON Events, TechTrivia Quiz, INCET 2K24, Teachers’ Day Celebrations, and many more. Additionally, I had the privilege of representing our student branch at prestigious gatherings like the Office Bearers Conclave at NMIT College, Bengaluru, and the IEEE Mysore Student Congress 2K24, broadening our network and bringing back valuable insights for our community.IEEE has always been more than just an organization—it has been a platform for students to enhance their technical, professional, and leadership skills, providing them with opportunities to engage in innovative projects, competitions, and networking with industry experts. The success of this year would not have been possible without the unwavering support of my team, faculty advisors, and the enthusiastic participation of our student members.As I hand over the leadership to Abhishek Devarushi, Chair (2025), I am confident that the IEEE Student Branch will continue to scale new heights under his guidance. I encourage the new team to build upon our achievements, explore new initiatives, and keep the IEEE spirit alive.I extend my sincere gratitude to everyone who contributed to this journey, and I look forward to supporting IEEE in any way Iwa can. Wishing the new team all the success in their endeavors!",
+      "Throughout the year, our team successfully organized and executed a series of impactful events, including Creative Eye Photography Competition, Hackathon Code Quest, IEEE Day Celebrations, NKCON Events, TechTrivia Quiz, INCET 2K24, Teachers' Day Celebrations, and many more. Additionally, I had the privilege of representing our student branch at prestigious gatherings like the Office Bearers Conclave at NMIT College, Bengaluru, and the IEEE Mysore Student Congress 2K24, broadening our network and bringing back valuable insights for our community.IEEE has always been more than just an organization—it has been a platform for students to enhance their technical, professional, and leadership skills, providing them with opportunities to engage in innovative projects, competitions, and networking with industry experts. The success of this year would not have been possible without the unwavering support of my team, faculty advisors, and the enthusiastic participation of our student members.As I hand over the leadership to Abhishek Devarushi, Chair (2025), I am confident that the IEEE Student Branch will continue to scale new heights under his guidance. I encourage the new team to build upon our achievements, explore new initiatives, and keep the IEEE spirit alive.I extend my sincere gratitude to everyone who contributed to this journey, and I look forward to supporting IEEE in any way Iwa can. Wishing the new team all the success in their endeavors!",
     name: "Austin Pacheco ",
     position:'Chair, IEEE Student Branch (2024)'
   },

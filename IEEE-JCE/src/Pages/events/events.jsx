@@ -11,7 +11,7 @@ const fetchEventData = async () => {
           {
             title: "Internation Women's Day Celebration",
             date: "8 March 2025",
-            description: "The **Women’s Day event** conducted by **WIE (Women in Engineering), IEEE** was a celebration of women’s contributions to science, technology, and engineering. The event featured inspiring talks, interactive sessions, and networking opportunities, empowering attendees with knowledge and motivation. Various activities highlighted the importance of gender diversity and inclusivity in STEM fields. The event successfully fostered a spirit of encouragement and recognition for women engineers, reinforcing the need for equal opportunities and innovation-driven progress. ",
+            description: "The **Women's Day event** conducted by **WIE (Women in Engineering), IEEE** was a celebration of women's contributions to science, technology, and engineering. The event featured inspiring talks, interactive sessions, and networking opportunities, empowering attendees with knowledge and motivation. Various activities highlighted the importance of gender diversity and inclusivity in STEM fields. The event successfully fostered a spirit of encouragement and recognition for women engineers, reinforcing the need for equal opportunities and innovation-driven progress. ",
             image: "src/assets/Events/WIE_WD/WIE_WD_1.jpg",
             highlights: ["Women's Day", "WIE", "IEEE"]
           },
@@ -33,14 +33,14 @@ const fetchEventData = async () => {
           {
             title: "A talk on 'Navigating Success: A Roadmap For Placement Excellence' By Alumni",
             date: "2024-01-17",
-            description: "Around 100 students have attended this talk and the presence of all the department faculty made the event successful. Alumni Miss Bhoomika Kadabi explained the importance of oncampus and also highlighted on the process of interview. And also explained how to prepare for the interview, what are do’s and don’ts of resume writing. At the outset the event was successful as alumni shared her experience as a student as well as a professional.",
+            description: "Around 100 students have attended this talk and the presence of all the department faculty made the event successful. Alumni Miss Bhoomika Kadabi explained the importance of oncampus and also highlighted on the process of interview. And also explained how to prepare for the interview, what are do's and don'ts of resume writing. At the outset the event was successful as alumni shared her experience as a student as well as a professional.",
             image: "src/assets/Aero_Talk/Bhoomika_alumni.jpg",
             highlights: ["100+ participants", "Industry mentors","Alumni", "Guidance"]
           },
           {
             title: "TechTriva, a technical quiz",
             date: "17/02/2024",
-            description: "The intention of this technical quiz is to evaluate one’s own understanding in the field of AI, 5G and Engineering life. JCE IEEE student branch conducted technical quiz on AI , 5G and Engineering life for all the students across the department on 17th Feb 2024.",
+            description: "The intention of this technical quiz is to evaluate one's own understanding in the field of AI, 5G and Engineering life. JCE IEEE student branch conducted technical quiz on AI , 5G and Engineering life for all the students across the department on 17th Feb 2024.",
             image: "src/assets/Events/Techtriva.jpg",
             highlights: ["5G", "AI", "Aptitude"]
           },
@@ -63,7 +63,7 @@ const fetchEventData = async () => {
           {
             title: "5th International Conference of Emerging Technologies INCET – 2024, Technically Co-sponsored by IEEE Bangalore Section.",
             date: "24/05/2024",
-            description: "Top themes that emerged when comparing the insights gained at each of the conference: The theme ofthe conference is “Emerging Technologies”. INCET is the place where researchers and practitioners canbring together different perspectives to address a common goal. INCET-2024 is the premier conferenceof Asian Pacific exchanging technical research in Emerging in Technology and provides attendees with a unique opportunity to present their research work.",
+            description: "Top themes that emerged when comparing the insights gained at each of the conference: The theme of the conference is 'Emerging Technologies'. INCET is the place where researchers and practitioners can bring together different perspectives to address a common goal. INCET-2024 is the premier conference of Asian Pacific exchanging technical research in Emerging in Technology and provides attendees with a unique opportunity to present their research work.",
             image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
             highlights: ["Conference","Emerging Technologies","Research"]
           },
@@ -89,7 +89,7 @@ const fetchEventData = async () => {
             highlights: ["Resume Writing", "Interview Techniques", "Professional Etiquette"]
           },
           {
-            title: "Teacher’s Day celebration",
+            title: "Teacher's Day celebration",
             date: "5th September 2024",
             description: "The objective of the event was to celebrate Teacher's Day, honoring the contributions of educators and fostering a sense of appreciation and respect for the teaching profession within the Department of Electronics and Communication at Jain College of Engineering, Belagavi. The involvement of the IEEE student branch suggests a further objective of promoting student engagement and leadership within the department.",
             image: "src/assets/Events/IEEE-WIE-AESS-inauguration.jpg",
@@ -144,10 +144,18 @@ const fetchEventData = async () => {
         // Upcoming events data
         upcomingEvents: [
           {
+            title: "IEEE Inauguration 2025",
+            date: "March 15, 2025",
+            description: "Join us for the grand inauguration of IEEE JCE Student Branch 2025. We are honored to have Dr. Swetha Goudar as our Chief Guest. The event will feature keynote speeches, technical sessions, and networking opportunities. Don't miss this prestigious event!",
+            theme: "Innovation & Leadership",
+            countdown: "1",
+            highlights: [ "Keynote Speeches", "Technical Sessions", "Networking"]
+          },
+          {
             title: "Hackathon 2025",
             date: "April 20-21, 2025",
             description: "48-hour hackathon challenging teams to build innovative solutions",
-            image: "/api/placeholder/600/400",
+            image: "src/assets/Events/CTC/Campus-to-Corporate-14.jpg",
             theme: "Sustainable Technology",
             countdown: "43"
           },
@@ -155,7 +163,7 @@ const fetchEventData = async () => {
             title: "AI/ML Workshop Series",
             date: "May 5-15, 2025",
             description: "Three-part workshop series on artificial intelligence and machine learning",
-            image: "/api/placeholder/600/400",
+            image: "src/assets/Events/Techtriva.jpg",
             theme: "Future of AI",
             countdown: "58"
           },
@@ -163,7 +171,7 @@ const fetchEventData = async () => {
             title: "Technical Paper Presentation",
             date: "June 10, 2025",
             description: "Platform for students to present their research papers and innovations",
-            image: "/api/placeholder/600/400",
+            image: "src/assets/Events/Conference/Conference-1.jpg",
             theme: "Emerging Technologies",
             countdown: "94"
           },
@@ -257,13 +265,13 @@ function EventsPage() {
               className="mb-8"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Event Image */}
-                <div className="relative overflow-hidden rounded-2xl h-64 lg:h-96">
-                  <img 
-                    src={currentEvent.image} 
-                    alt={currentEvent.title}
-                    className="w-full h-full object-cover"
-                  />
+                {/* Event Image/Placeholder */}
+                <div className="relative overflow-hidden rounded-2xl h-64 lg:h-96 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center">
+                  <div className="text-center p-4">
+                    <div className="text-5xl mb-4">🎉</div>
+                    <p className="text-gray-300 text-xl font-medium">IEEE Inauguration 2025</p>
+                    <p className="text-gray-400 mt-2">March 15, 2025</p>
+                  </div>
                 </div>
                 
                 {/* Event Details */}
@@ -298,12 +306,12 @@ function EventsPage() {
                     {currentEvent.description}
                   </p>
                   
-                  {activeTab === "past" && (
+                  {activeTab === "upcoming" && currentEvent.highlights && (
                     <div>
-                      <h4 className="text-lg font-medium mb-3 text-blue-500">Highlights</h4>
+                      <h4 className="text-lg font-medium mb-3 text-blue-500">Event Highlights</h4>
                       <div className="flex flex-wrap gap-2">
                         {currentEvent.highlights.map((highlight, idx) => (
-                          <span key={idx} className="bg-gray-800 px-3 py-1 rounded-md text-sm">
+                          <span key={idx} className="bg-gray-800 px-3 py-1 rounded-md text-sm text-gray-300">
                             {highlight}
                           </span>
                         ))}
@@ -344,20 +352,27 @@ function EventsPage() {
                   }`}
                   onClick={() => setCurrentEventIndex(idx)}
                 >
-                  <div className="relative h-48">
-                    <img 
-                      src={event.image} 
-                      alt={event.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
-                    <div className="absolute bottom-0 left-0 p-4">
-                      <p className="text-sm text-blue-400">{event.date}</p>
+                  <div className="relative h-48 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center">
+                    <div className="text-center p-4">
+                      <div className="text-4xl mb-2">📸</div>
+                      <p className="text-gray-300 font-medium">Image Coming Soon</p>
                     </div>
                   </div>
                   <div className="p-4">
                     <h4 className="font-bold text-lg mb-2">{event.title}</h4>
                     <p className="text-gray-400 text-sm line-clamp-2">{event.description}</p>
+                    {activeTab === "upcoming" && (
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <span className="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded-full">
+                          {event.countdown} days left
+                        </span>
+                        {event.highlights && event.highlights.map((highlight, index) => (
+                          <span key={index} className="text-xs bg-purple-900 text-purple-300 px-2 py-1 rounded-full">
+                            {highlight}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}

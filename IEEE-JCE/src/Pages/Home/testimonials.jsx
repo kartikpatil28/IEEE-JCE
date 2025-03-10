@@ -249,15 +249,7 @@ const TestimonialsSection = () => {
           </div>
         </div>
         
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <Link
-            to="/join"
-            className="inline-block rounded-full bg-blue-600 text-white px-10 py-3 text-lg font-semibold shadow-lg hover:bg-blue-700 hover:shadow-2xl transform hover:scale-105 transition-all duration-300 no-underline"
-          >
-            Join IEEE Today
-          </Link>
-        </div>
+        
       </div>
     </div>
   );

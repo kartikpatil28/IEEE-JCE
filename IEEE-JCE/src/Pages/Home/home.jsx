@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-import { FaBell, FaCalendarAlt, FaUsers, FaLightbulb, FaGraduationCap } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaBell, FaCalendarAlt, FaUsers, FaLightbulb, FaGraduationCap, FaArrowRight } from "react-icons/fa";
 import group from "../../assets/Logos/JCE.png";
 import grp from "../../assets/group.jpg";
 import wie_logo from "../../assets/Logos/wie-logo.png";
@@ -11,6 +11,7 @@ import aess_logo from "../../assets/Logos/aess-logo.png";
 import cs_logo from "../../assets/Logos/cs-logo.jpeg";
 import Team from "../team/team";
 import TestimonialsSection from "../Home/testimonials";
+import contact from "../contact/contact";
 
 // Motion wrapper for consistent animations
 const MotionWrapper = ({ children, delay = 0, className = "" }) => (
@@ -103,72 +104,90 @@ const SectionTitle = ({ title, subtitle, light = false }) => {
   );
 };
 
-// Hero Section Component
+// Enhanced Hero Section Component
 const HeroSection = () => {
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <img
-        src={grp}
-        alt="IEEE Event"
-        className="absolute w-full h-full object-cover"
-        style={{ filter: "brightness(0.3)" }}
-        loading="lazy"
-      />
+      {/* Background Image with Zoom Effect */}
+      <div className="absolute inset-0">
+        <motion.img
+          src={grp}
+          alt="IEEE Event"
+          className="w-full h-full object-cover"
+          style={{ filter: "brightness(0.3)" }}
+          loading="lazy"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "linear"
+          }}
+        />
+      </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/50 to-black/70"></div>
+      {/* Simple Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-black/60 to-black/70"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl">
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6"
-        >
-          JCE <span className="text-blue-400">IEEE</span> Student Branch
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-2xl text-gray-200 mb-10"
-        >
-          Empowering students through innovation, technology, and professional growth
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
+        <div className="mb-8">
+          <img 
+            src={group} 
+            alt="JCE Logo" 
+            className="w-28 h-28 mx-auto mb-6 rounded-full border-2 border-white/20 shadow-lg"
+          />
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
+            JCE <span className="text-blue-400">IEEE</span> Student Branch
+          </h1>
+          <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full">
+            <span className="text-white/90 text-lg">Inauguration Day 2024</span>
+          </div>
+        </div>
+
+        <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
+          Empowering students through innovation, technology, and professional growth. 
+          Join us in shaping the future of engineering.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/about"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300"
+            className="inline-flex items-center px-8 py-3 text-lg font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200"
           >
             Learn More
+            <FaArrowRight className="ml-2" />
           </Link>
+          
           <Link
             to="/membership"
-            className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-800 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300"
+            className="inline-flex items-center px-8 py-3 text-lg font-medium rounded-lg border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-200"
           >
             Join IEEE
+            <FaUsers className="ml-2" />
           </Link>
-        </motion.div>
+
+          <Link
+            to="/contact"
+            className="inline-flex items-center px-8 py-3 text-lg font-medium rounded-lg bg-white text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/contact';
+            }}
+          >
+            Contact Us
+            <FaArrowRight className="ml-2" />
+          </Link>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        <div className="w-8 h-12 rounded-full border-2 border-white flex justify-center">
-          <div className="w-2 h-3 bg-white rounded-full mt-2"></div>
+      {/* Simple scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center p-1">
+          <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce"></div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
@@ -235,34 +254,51 @@ const AboutSection = () => {
   );
 };
 
-// Stats Section Component
+// Enhanced Stats Section Component
 const StatsSection = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section ref={ref} className="py-16 px-6 bg-gray-50">
+    <section ref={ref} className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNGM0LjQxOCAwIDgtMy41ODIgOC04cy0zLjU4Mi04LTgtOC04IDMuNTgyLTggOCAzLjU4MiA4IDggOHoiIHN0cm9rZT0iIzFmMjkzNyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-5"></div>
+
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title={<>Our <span className="text-blue-500">Impact</span> in Numbers</>}
           subtitle="Growing stronger every year with dedicated members and impactful initiatives"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat, i) => (
-            <MotionWrapper key={i} delay={i * 0.1} className="hover:transform hover:scale-105">
-              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 rounded-2xl transform group-hover:scale-105 transition-transform duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500/10 to-blue-600/10 flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
                 {stat.icon}
-                <h3 className="text-4xl font-bold text-gray-800 mb-1">
-                  {inView ? (
-                    <CountUp start={0} end={stat.value} duration={2} />
-                  ) : (
-                    0
+                </div>
+                <div className="space-y-2">
+                  {inView && (
+                    <CountUp
+                      end={stat.value}
+                      duration={2.5}
+                      separator=","
+                      className="text-4xl font-bold text-gray-900"
+                    />
                   )}
-                  <span className="text-blue-500">+</span>
-                </h3>
-                <p className="text-gray-600 font-medium">{stat.label}</p>
+                  <span className="text-4xl font-bold text-gray-900">+</span>
+                  <h3 className="text-lg font-medium text-gray-600">{stat.label}</h3>
+                </div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl"></div>
               </div>
-            </MotionWrapper>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -270,10 +306,13 @@ const StatsSection = () => {
   );
 };
 
-// Societies Section
+// Enhanced Societies Section
 const SocietiesSection = () => {
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNGM0LjQxOCAwIDgtMy41ODIgOC04cy0zLjU4Mi04LTgtOC04IDMuNTgyLTggOCAzLjU4MiA4IDggOHoiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-5"></div>
+
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title={<>Our <span className="text-blue-500">IEEE</span> Societies</>}
@@ -281,33 +320,40 @@ const SocietiesSection = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {societies.map((society, i) => (
-            <MotionWrapper key={i} delay={i * 0.1} className="hover:transform hover:scale-105">
-              <div className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 h-full flex flex-col">
-                <div className="p-6 bg-gray-50 flex justify-center items-center h-48">
+          {societies.map((society, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="group"
+            >
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+                <div className="p-8 bg-gradient-to-br from-gray-50 to-gray-100 flex justify-center items-center h-48 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 transform group-hover:scale-110 transition-transform duration-700"></div>
                   <img 
                     src={society.logo} 
                     alt={society.name} 
-                    className="max-h-32 max-w-full"
+                    className="max-h-32 max-w-full relative z-10 transform group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                     {society.name} <span className="text-blue-500">({society.shortName})</span>
                   </h3>
-                  <p className="text-gray-600 mb-4">{society.description}</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{society.description}</p>
                   <Link
                     to={`/societies/${society.shortName.toLowerCase()}`}
-                    className="text-blue-500 font-medium hover:text-blue-700 inline-flex items-center"
+                    className="inline-flex items-center text-blue-500 font-medium hover:text-blue-600 transition-colors group/link"
                   >
                     Learn more
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <FaArrowRight className="ml-2 transform group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
-            </MotionWrapper>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -315,100 +361,155 @@ const SocietiesSection = () => {
   );
 };
 
-// Events Section
+// Enhanced Events Section Component
 const EventsSection = () => {
   return (
-    <section className="py-16 px-6 bg-blue-800 text-white">
+    <section className="py-24 px-6 bg-gradient-to-b from-gray-900 via-blue-900 to-black">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
-          title={<>Upcoming <span className="text-blue-300">Events</span></>}
-          subtitle="Join us for these exciting events and expand your knowledge and network"
+          title={<>Upcoming <span className="text-blue-400">Events</span></>}
+          subtitle="Join us for exciting workshops, seminars, and competitions"
           light={true}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {events.map((event, i) => (
-            <MotionWrapper key={i} delay={i * 0.1} className="hover:transform hover:translate-y-1">
-              <div className="bg-blue-700 rounded-xl p-6 shadow-lg h-full flex flex-col">
-                <div className="text-blue-300 text-sm font-medium mb-3">{event.date}</div>
-                <h3 className="text-xl font-bold mb-3">{event.name}</h3>
-                <p className="text-blue-100 mb-4 flex-grow">{event.description}</p>
-                <Link
-                  to="/events"
-                  className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-sm transition duration-300 mt-auto"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {events.map((event, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="group"
+            >
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <div className="bg-white/10 backdrop-blur-lg rounded-lg px-3 py-1 text-sm inline-block mb-2 w-fit">
+                      {event.date}
+                    </div>
+                    <h3 className="text-xl font-bold group-hover:text-blue-200 transition-colors duration-300">
+                      {event.name}
+                    </h3>
+                  </div>
+                  {/* Decorative elements */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-bl-full transform translate-x-10 -translate-y-10 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-500"></div>
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-tr-full transform -translate-x-8 translate-y-8 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed">
+                    {event.description}
+                  </p>
+                  <div className="mt-6 flex justify-between items-center">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="text-blue-500 font-medium flex items-center group/btn"
                 >
                   Learn More
-                </Link>
+                      <FaArrowRight className="ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
+                    </motion.button>
+                    <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
+                      <FaCalendarAlt className="text-blue-500" />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </MotionWrapper>
+            </motion.div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            to="/events"
-            className="inline-block bg-white text-blue-800 px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-100 transition duration-300"
-          >
-            View All Events
-          </Link>
         </div>
       </div>
     </section>
   );
 };
 
-// Gallery Section Component
+// Enhanced Gallery Section Component
 const GallerySection = () => {
   return (
-    <section className="py-16 px-6 bg-gray-900">
+    <section className="py-24 px-6 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNGM0LjQxOCAwIDgtMy41ODIgOC04cy0zLjU4Mi04LTgtOC04IDMuNTgyLTggOCAzLjU4MiA4IDggOHoiIHN0cm9rZT0iIzFmMjkzNyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-5"></div>
+
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title={<>Our <span className="text-blue-400">Gallery</span></>}
-          subtitle="Relive our best moments and activities through these images"
+          subtitle="Capturing moments of innovation, learning, and collaboration"
           light={true}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {galleryImages.slice(0, 8).map((image, i) => (
-            <MotionWrapper key={i} delay={i * 0.05} className="hover:transform hover:scale-105">
-              <div className="overflow-hidden rounded-lg shadow-lg h-64">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {galleryImages.map((image, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              className="group relative overflow-hidden rounded-2xl shadow-2xl"
+            >
+              <div className="aspect-w-4 aspect-h-3">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition duration-500 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-white font-medium text-lg">{image.alt}</h3>
+                </div>
               </div>
-            </MotionWrapper>
+            </motion.div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mt-12"
+        >
           <Link
             to="/gallery"
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300"
+            className="inline-flex items-center px-8 py-3 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 transition-colors duration-300"
           >
             View Full Gallery
+            <FaArrowRight className="ml-2" />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-// Join IEEE Section
+// Enhanced Join Section
 const JoinSection = () => {
   return (
-    <section className="py-16 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl overflow-hidden shadow-xl">
-          <div className="p-8 md:p-12 flex flex-col md:flex-row items-center">
-            <div className="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+    <section className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+          <div className="relative p-8 md:p-12">
+            {/* Decorative Elements */}
+            <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-blue-500 rounded-full opacity-10"></div>
+            <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-indigo-500 rounded-full opacity-10"></div>
+
+            <div className="relative flex flex-col md:flex-row items-center gap-12">
+              <div className="md:w-2/3">
               <motion.h2
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-3xl md:text-4xl font-bold text-white mb-4"
+                  className="text-4xl md:text-5xl font-bold text-white mb-6"
               >
                 Join IEEE Today
               </motion.h2>
@@ -417,7 +518,7 @@ const JoinSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-blue-100 text-lg mb-6"
+                  className="text-blue-100 text-lg mb-8 leading-relaxed"
               >
                 Become a part of the world's largest technical professional organization 
                 for the advancement of technology. Gain access to technical resources, 
@@ -428,26 +529,29 @@ const JoinSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-blue-100 mb-6 space-y-2"
-              >
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  className="space-y-4"
+                >
+                  {[
+                    "Access to IEEE's digital library with research papers",
+                    "Networking with industry professionals",
+                    "Professional development opportunities"
+                  ].map((benefit, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                      className="flex items-center text-blue-100"
+                    >
+                      <div className="mr-4 w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  Access to IEEE's digital library with research papers
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Networking with industry professionals
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Professional development opportunities
-                </li>
+                      </div>
+                      {benefit}
+                    </motion.li>
+                  ))}
               </motion.ul>
             </div>
             <motion.div
@@ -455,15 +559,20 @@ const JoinSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="md:w-1/3 flex justify-center"
+                className="md:w-1/3"
             >
               <Link
                 to="/membership"
-                className="bg-white text-blue-800 px-8 py-4 rounded-lg text-xl font-bold shadow-lg hover:bg-gray-100 transition duration-300 inline-block text-center"
+                  className="group relative inline-flex items-center justify-center w-full px-8 py-4 text-xl font-bold text-blue-600 bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105"
               >
+                  <span className="relative z-10 flex items-center">
                 Become a Member
+                    <FaArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -471,7 +580,72 @@ const JoinSection = () => {
   );
 };
 
-// Main Home Component
+// Enhanced Mobile Events Panel
+const MobileEventsPanel = ({ showEventsPanel, setShowEventsPanel }) => {
+  return (
+    <div className="fixed bottom-4 right-4 z-50 md:hidden">
+      <motion.button
+        onClick={() => setShowEventsPanel(!showEventsPanel)}
+        className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        aria-label="Toggle Events Panel"
+      >
+        <FaBell size={20} />
+      </motion.button>
+      
+      <AnimatePresence>
+        {showEventsPanel && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute bottom-16 right-0 bg-white rounded-2xl shadow-2xl w-80 overflow-hidden border border-gray-100"
+          >
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4">
+              <h3 className="text-lg font-bold text-white flex items-center">
+                <FaCalendarAlt className="mr-2" />
+                Upcoming Events
+              </h3>
+            </div>
+            <div className="max-h-96 overflow-y-auto">
+              {events.map((event, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-100 rounded-lg p-2 text-blue-600">
+                      <FaCalendarAlt size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-gray-900 font-medium">{event.name}</h4>
+                      <p className="text-sm text-gray-500">{event.date}</p>
+                      <p className="text-sm text-gray-600 mt-1">{event.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+              <Link 
+                to="/events"
+                className="block p-4 text-center text-blue-600 font-medium hover:bg-blue-50 transition-colors duration-200"
+              >
+                View All Events
+                <FaArrowRight className="inline-block ml-2" />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+// Main Home Component with enhanced mobile panel
 const Home = () => {
   const [showEventsPanel, setShowEventsPanel] = useState(false);
 
@@ -486,39 +660,7 @@ const Home = () => {
       <GallerySection />
       <JoinSection />
       <Team />
-      
-      {/* Mobile Events Panel */}
-      <div className="fixed bottom-4 right-4 z-50 md:hidden">
-        <button
-          onClick={() => setShowEventsPanel(!showEventsPanel)}
-          className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
-          aria-label="Toggle Events Panel"
-        >
-          <FaBell size={20} />
-        </button>
-        
-        {showEventsPanel && (
-          <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-xl w-72 overflow-hidden">
-            <div className="bg-blue-600 p-3">
-              <h3 className="text-lg font-bold text-white">Upcoming Events</h3>
-            </div>
-            <div className="max-h-80 overflow-y-auto">
-              {events.map((event, i) => (
-                <div key={i} className="p-3 border-b border-gray-200 hover:bg-gray-50">
-                  <p className="text-sm font-medium text-gray-900">{event.name}</p>
-                  <p className="text-xs text-gray-500">{event.date}</p>
-                </div>
-              ))}
-              <Link 
-                to="/events"
-                className="block p-3 text-center text-blue-600 font-medium hover:bg-gray-50"
-              >
-                View All Events
-              </Link>
-            </div>
-          </div>
-        )}
-      </div>
+      <MobileEventsPanel showEventsPanel={showEventsPanel} setShowEventsPanel={setShowEventsPanel} />
     </div>
   );
 };

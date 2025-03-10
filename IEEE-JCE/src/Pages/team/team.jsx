@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import austin from "../../assets/Photos/Austin.jpg";
 import chandan from "../../assets/Photos/Chandan.jpg";
 import kshiti from "../../assets/Photos/Kshiti.jpg";
@@ -131,11 +132,78 @@ function Team() {
           </p>
         </motion.div>
 
-        {/* Branch Counsellor Section */}
+        {/* College Administration Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
+          className="mb-24"
+        >
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            College <span className="text-blue-400">Administration</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {/* Principal Card */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/3 bg-gradient-to-br from-purple-500 to-indigo-600 p-8 flex items-center justify-center">
+                  <div className="w-32 h-32 rounded-full border-4 border-white overflow-hidden flex items-center justify-center bg-gray-200">
+                    <svg className="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 14.016q2.906 0 5.016 2.039t2.098 4.945h-14.227q-0.047-2.906 2.098-4.945t5.016-2.039zM12 12q-1.641 0-2.813-1.172t-1.172-2.813 1.172-2.836 2.813-1.195 2.813 1.195 1.172 2.836-1.172 2.813-2.813 1.172z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="md:w-2/3 p-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Dr.J Shivakumar
+                  </h3>
+                  <p className="text-purple-400 text-xl mb-4">Principal</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Leading Jain College of Engineering with a vision for excellence in technical education and research.
+                  </p>
+                  <div className="mt-6">
+                    <a href="mailto:principal@jce.ac.in" className="text-blue-400 hover:text-blue-300 transition-colors">
+                      principal@jce.ac.in
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* HOD ECE Card */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-cyan-600 p-8 flex items-center justify-center">
+                  <div className="w-32 h-32 rounded-full border-4 border-white overflow-hidden flex items-center justify-center bg-gray-200">
+                    <svg className="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 14.016q2.906 0 5.016 2.039t2.098 4.945h-14.227q-0.047-2.906 2.098-4.945t5.016-2.039zM12 12q-1.641 0-2.813-1.172t-1.172-2.813 1.172-2.836 2.813-1.195 2.813 1.195 1.172 2.836-1.172 2.813-2.813 1.172z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="md:w-2/3 p-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Prof. V.R.Bagali
+                  </h3>
+                  <p className="text-blue-400 text-xl mb-4">Head of Department, ECE</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Leading the Electronics and Communication Engineering department with focus on innovation and academic excellence.
+                  </p>
+                  <div className="mt-6">
+                    <a href="mailto:hodece@jce.ac.in" className="text-blue-400 hover:text-blue-300 transition-colors">
+                      hodece@jce.ac.in
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Branch Counsellor Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
           className="mb-24"
         >
           <h2 className="text-3xl font-bold text-center text-white mb-12">
@@ -199,6 +267,70 @@ function Team() {
                       />
                     </svg>
                   </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Branch Advisor and Coordinator Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mb-24"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {/* Branch Advisor Card */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/3 bg-gradient-to-br from-green-500 to-teal-600 p-8 flex items-center justify-center">
+                  <div className="w-32 h-32 rounded-full border-4 border-white overflow-hidden flex items-center justify-center bg-gray-200">
+                    <svg className="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 14.016q2.906 0 5.016 2.039t2.098 4.945h-14.227q-0.047-2.906 2.098-4.945t5.016-2.039zM12 12q-1.641 0-2.813-1.172t-1.172-2.813 1.172-2.836 2.813-1.195 2.813 1.195 1.172 2.836-1.172 2.813-2.813 1.172z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="md:w-2/3 p-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Prof. Jayashree M Rudagi
+                  </h3>
+                  <p className="text-green-400 text-xl mb-4">Branch Advisor</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Providing guidance and support to IEEE student activities and initiatives.
+                  </p>
+                  <div className="mt-6">
+                    <a href="mailto:jayashreerudagi@jce.ac.in" className="text-blue-400 hover:text-blue-300 transition-colors">
+                      jayashreerudagi@jce.ac.in
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Branch Coordinator Card */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl shadow-2xl overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/3 bg-gradient-to-br from-pink-500 to-rose-600 p-8 flex items-center justify-center">
+                  <div className="w-32 h-32 rounded-full border-4 border-white overflow-hidden flex items-center justify-center bg-gray-200">
+                    <svg className="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 14.016q2.906 0 5.016 2.039t2.098 4.945h-14.227q-0.047-2.906 2.098-4.945t5.016-2.039zM12 12q-1.641 0-2.813-1.172t-1.172-2.813 1.172-2.836 2.813-1.195 2.813 1.195 1.172 2.836-1.172 2.813-2.813 1.172z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="md:w-2/3 p-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Prof. Deepali Patil
+                  </h3>
+                  <p className="text-pink-400 text-xl mb-4">Branch Coordinator</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Coordinating IEEE branch activities and facilitating student engagement.
+                  </p>
+                  <div className="mt-6">
+                    <a href="mailto:deepalipatil@jce.ac.in" className="text-blue-400 hover:text-blue-300 transition-colors">
+                      deepalipatil@jce.ac.in
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -289,7 +421,7 @@ function Team() {
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                       </button>
                       <button className="p-2 text-gray-400 hover:text-white transition-colors">
@@ -354,9 +486,12 @@ function Team() {
             Student Branch. Connect with us to learn more about membership
             opportunities and upcoming events.
           </p>
-          <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-full hover:shadow-lg transform transition hover:-translate-y-1">
+          <Link
+            to="/contact"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-full hover:shadow-lg transform transition hover:-translate-y-1"
+          >
             Contact Us
-          </button>
+          </Link>
         </motion.div>
       </div>
     </div>

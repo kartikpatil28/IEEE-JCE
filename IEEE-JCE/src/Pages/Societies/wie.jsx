@@ -1,11 +1,12 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 // Import images
 import wieWD1 from "../../assets/Events/WIE_WD/WIE_WD_1.jpg";
 import wieWD2 from "../../assets/Events/WIE_WD/WIE_WD_2.jpg";
 import wieWD3 from "../../assets/Events/WIE_WD/WIE_WD_3.jpg";
 import wieWD4 from "../../assets/Events/WIE_WD/WIE_WD_4.jpg";
 import wieWD5 from "../../assets/Events/WIE_WD/WIE_WD_5.jpg";
-import { motion } from "framer-motion";
 
 const WIE = () => {
   const fadeIn = {
@@ -366,9 +367,12 @@ const WIE = () => {
             className="text-center mt-6"
             {...fadeIn}
           >
-            <button className="bg-purple-700 text-white px-6 py-2 rounded-full shadow hover:bg-purple-600 transition-all duration-300 transform hover:scale-105">
+            <Link
+              to="/gallery"
+              className="inline-block bg-purple-700 text-white px-6 py-2 rounded-full shadow hover:bg-purple-600 transition-all duration-300 transform hover:scale-105"
+            >
               View More Photos
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>
