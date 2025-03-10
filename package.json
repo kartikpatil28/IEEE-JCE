@@ -4,9 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "preinstall": "npm install -g vite",
     "dev": "vite",
-    "build": "vite build",
+    "build": "node build.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
