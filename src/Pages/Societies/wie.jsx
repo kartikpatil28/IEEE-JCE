@@ -12,7 +12,7 @@ const WIE = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const galleryImages = [
@@ -26,39 +26,39 @@ const WIE = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-200">
       {/* Hero Section - Black Theme with Larger WIE Title */}
-      <motion.div 
+      <motion.div
         className="p-8 bg-gradient-to-r from-gray-900 to-purple-900 text-white text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         {/* Added Official WIE Logo */}
-        <motion.div 
+        <motion.div
           className="flex justify-center mb-6"
           initial={{ scale: 0.5 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <img 
-            src="https://entrepreneurship.ieee.org/wp-content/uploads/2020/04/WIE-Logo-250x250-1.png" 
-            alt="IEEE Women in Engineering Logo" 
+          <img
+            src="https://entrepreneurship.ieee.org/wp-content/uploads/2020/04/WIE-Logo-250x250-1.png"
+            alt="IEEE Women in Engineering Logo"
             className="h-32 mx-auto border rounded-full shadow-lg hover:shadow-purple-500/50 transition-shadow duration-300"
           />
         </motion.div>
-        <motion.h1 
+        <motion.h1
           className="text-6xl md:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400"
           {...fadeIn}
         >
           Women in Engineering
         </motion.h1>
-        <motion.h2 
+        <motion.h2
           className="text-xl mb-6"
           {...fadeIn}
           transition={{ delay: 0.2 }}
         >
           IEEE JCE Student Branch
         </motion.h2>
-        <motion.div 
+        <motion.div
           className="max-w-3xl mx-auto"
           {...fadeIn}
           transition={{ delay: 0.3 }}
@@ -77,7 +77,7 @@ const WIE = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Vision */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-6 rounded-lg shadow-md border border-purple-700 hover:border-purple-500 transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
@@ -86,14 +86,16 @@ const WIE = () => {
                 Vision
               </h2>
               <p className="text-gray-300">
-                To be a leading community that promotes diversity in engineering
-                and technology fields, ensuring equal opportunities for all,
-                especially women, to pursue and excel in STEM careers.
+                To be globally recognized for its contributions in STEM fields.
+                Our goal is to facilitate the recruitment and retention of women
+                in technical disciplines globally. We envision a vibrant
+                community of IEEE women and men collectively using their diverse
+                talents to innovate for the benefit of humanity.
               </p>
             </motion.div>
 
             {/* Mission */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-6 rounded-lg shadow-md border border-blue-700 hover:border-blue-500 transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
@@ -103,10 +105,10 @@ const WIE = () => {
                 Mission
               </h2>
               <p className="text-gray-300">
-                To inspire, engage, encourage, and empower women in engineering
-                and technology by creating a supportive network, providing
-                educational resources, and promoting professional development
-                opportunities.
+                To connect, support, and inspire women and girls worldwide, and
+                facilitate their recruitment and retention in STEM fields,
+                fostering technological innovation and excellence for the
+                benefit of humanity.
               </p>
             </motion.div>
           </div>
@@ -114,9 +116,9 @@ const WIE = () => {
       </div>
 
       {/* Committee Section */}
-      <div className="p-8 bg-gray-900">
+      <div className="flex justify-center items-center p-8 bg-gray-900">
         <div className="max-w-4xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center text-purple-400 mb-8"
             {...fadeIn}
           >
@@ -124,7 +126,7 @@ const WIE = () => {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Advisor */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-700 hover:border-purple-500 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
@@ -155,44 +157,11 @@ const WIE = () => {
               </div>
             </motion.div>
 
-            {/* Coordinator */}
-            <motion.div 
-              className="bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-700 hover:border-purple-500 transition-all duration-300"
-              whileHover={{ scale: 1.02 }}
-              {...fadeIn}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="flex flex-col sm:flex-row">
-                <div className="sm:w-1/3">
-                  <img
-                    src="/api/placeholder/300/300"
-                    alt="Student Coordinator"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6 sm:w-2/3">
-                  <h3 className="text-xl font-bold text-white mb-1">
-                    Samantha Chen
-                  </h3>
-                  <p className="text-purple-400 font-semibold mb-3">
-                    Student Coordinator
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    Final Year, Computer Science Engineering
-                  </p>
-                  <p className="text-gray-400 text-sm mt-2">
-                    IEEE Student Member since 2023
-                  </p>
-                  <p className="text-gray-400 text-sm mt-2">
-                    Email: samantha.chen@student.jce.edu
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+            
           </div>
 
           {/* Committee Members */}
-          <motion.h3 
+          <motion.h3
             className="text-2xl font-bold text-center text-purple-400 mt-12 mb-6"
             {...fadeIn}
           >
@@ -200,7 +169,7 @@ const WIE = () => {
           </motion.h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Member 1 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -215,7 +184,7 @@ const WIE = () => {
             </motion.div>
 
             {/* Member 2 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -233,7 +202,7 @@ const WIE = () => {
             </motion.div>
 
             {/* Member 3 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -249,7 +218,7 @@ const WIE = () => {
             </motion.div>
 
             {/* Member 4 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -265,7 +234,7 @@ const WIE = () => {
             </motion.div>
 
             {/* Member 5 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-purple-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -286,7 +255,7 @@ const WIE = () => {
       {/* Events Section */}
       <div className="p-8 bg-black">
         <div className="max-w-5xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center text-purple-400 mb-8"
             {...fadeIn}
           >
@@ -294,7 +263,7 @@ const WIE = () => {
           </motion.h2>
           <div className="space-y-6">
             {/* Event 1 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-700 hover:border-purple-500 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
@@ -340,7 +309,7 @@ const WIE = () => {
       {/* Gallery Section */}
       <div className="p-8 bg-gray-900">
         <div className="max-w-5xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center text-purple-400 mb-8"
             {...fadeIn}
           >
@@ -348,7 +317,7 @@ const WIE = () => {
           </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {galleryImages.map((image, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="bg-gray-800 p-2 rounded shadow border border-gray-700 hover:border-purple-500 transition-all duration-300 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
@@ -363,10 +332,7 @@ const WIE = () => {
               </motion.div>
             ))}
           </div>
-          <motion.div 
-            className="text-center mt-6"
-            {...fadeIn}
-          >
+          <motion.div className="text-center mt-6" {...fadeIn}>
             <Link
               to="/gallery"
               className="inline-block bg-purple-700 text-white px-6 py-2 rounded-full shadow hover:bg-purple-600 transition-all duration-300 transform hover:scale-105"
@@ -376,8 +342,6 @@ const WIE = () => {
           </motion.div>
         </div>
       </div>
-
-      
     </div>
   );
 };

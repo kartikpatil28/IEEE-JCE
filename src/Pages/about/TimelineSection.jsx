@@ -17,13 +17,13 @@ const TimelineSection = () => {
   };
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto flex flex-col items-center py-24 px-4" ref={timelineRef}>
+    <div className="relative w-full max-w-5xl mx-auto flex flex-col items-center py-16 md:py-24 px-4" ref={timelineRef}>
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gray-900 bg-opacity-30 backdrop-blur-sm rounded-xl -z-10"></div>
       
       {/* Glowing Orbs - Decorative Elements */}
       <motion.div 
-        className="absolute top-10 right-10 w-32 h-32 rounded-full bg-purple-600 opacity-20 blur-xl -z-5"
+        className="absolute top-10 right-5 md:right-10 w-20 md:w-32 h-20 md:h-32 rounded-full bg-purple-600 opacity-20 blur-xl -z-5"
         animate={{ 
           scale: [1, 1.2, 1],
           opacity: [0.15, 0.25, 0.15]
@@ -35,7 +35,7 @@ const TimelineSection = () => {
         }}
       />
       <motion.div 
-        className="absolute bottom-20 left-10 w-24 h-24 rounded-full bg-red-500 opacity-20 blur-xl -z-5"
+        className="absolute bottom-20 left-5 md:left-10 w-16 md:w-24 h-16 md:h-24 rounded-full bg-red-500 opacity-20 blur-xl -z-5"
         animate={{ 
           scale: [1, 1.3, 1],
           opacity: [0.15, 0.2, 0.15]
@@ -50,7 +50,7 @@ const TimelineSection = () => {
 
       {/* Title */}
       <motion.h2 
-        className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-purple-600"
+        className="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-purple-600"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -68,35 +68,39 @@ const TimelineSection = () => {
 
       {/* Timeline Items */}
       {timelineData.map((item, index) => {
-        const isEven = index % 2 === 0;
+        const isOdd = index % 2 !== 0;
         
         return (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 0, y: 30 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className={`w-full flex items-center md:items-start ${isEven ? "flex-row" : "flex-row-reverse"} mb-16 relative`}
+            viewport={{ once: true, margin: "-50px" }}
+            className={`w-full flex flex-col md:flex-row items-start mb-12 md:mb-16 relative ${
+              isOdd ? "md:flex-row-reverse" : ""
+            }`}
           >
-            {/* Content Side */}
+            {/* Content Side - now full width on mobile */}
             <motion.div 
-              className={`w-full md:w-5/12 ${isEven ? "text-right pr-8" : "text-left pl-8"}`}
+              className={`w-full md:w-5/12 ${
+                isOdd ? "md:text-left md:pl-8" : "md:text-right md:pr-8"
+              } pl-12 md:pl-0 mt-2 md:mt-0`}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
               <motion.div 
-                className="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-gray-600 transition-all duration-300"
+                className="bg-gray-800 p-5 md:p-6 rounded-xl shadow-lg border border-gray-700 hover:border-gray-600 transition-all duration-300"
                 whileHover={{ y: -5 }}
                 onClick={() => handleItemClick(index)}
               >
                 <motion.h3 
-                  className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-red-400 to-purple-500 bg-clip-text text-transparent"
+                  className="text-lg md:text-2xl font-semibold bg-gradient-to-r from-red-400 to-purple-500 bg-clip-text text-transparent"
                 >
                   {item.date}
                 </motion.h3>
                 
-                <p className="text-gray-300 mt-2 font-medium">{item.description}</p>
+                <p className="text-gray-300 mt-2 font-medium text-sm md:text-base">{item.description}</p>
                 
                 <div className="flex items-center justify-end mt-2">
                   <motion.div
@@ -118,15 +122,15 @@ const TimelineSection = () => {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <p className="text-gray-400 mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 mt-4 pt-4 border-t border-gray-700 text-sm md:text-base">
                     {item.paragraph}
                   </p>
                 </motion.div>
               </motion.div>
             </motion.div>
 
-            {/* Center Icon */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            {/* Center Icon - Positioned differently for mobile */}
+            <div className="absolute left-0 md:left-1/2 top-0 md:top-auto transform md:-translate-x-1/2 flex md:flex-col items-center">
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
@@ -138,18 +142,18 @@ const TimelineSection = () => {
                   damping: 15,
                   delay: index * 0.2 + 0.3
                 }}
-                className="w-14 h-14 bg-gradient-to-r from-red-500 to-purple-600 rounded-full border-4 border-gray-800 flex items-center justify-center shadow-lg shadow-purple-600/30 cursor-pointer z-10"
+                className="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-r from-red-500 to-purple-600 rounded-full border-4 border-gray-800 flex items-center justify-center shadow-lg shadow-purple-600/30 cursor-pointer z-10"
                 onClick={() => handleItemClick(index)}
               >
-                <item.icon className="text-white text-xl" />
+                <item.icon className="text-white text-sm md:text-xl" />
               </motion.div>
               
               {/* Line connector for mobile */}
-              <div className="h-full w-px bg-gray-700 block md:hidden"></div>
+              <div className="h-full w-px bg-gray-700 block md:hidden ml-5"></div>
             </div>
 
             {/* Empty Space Side */}
-            <div className="hidden md:block w-5/12"></div>
+            <div className="hidden md:block md:w-5/12"></div>
           </motion.div>
         );
       })}
@@ -159,7 +163,7 @@ const TimelineSection = () => {
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
-        className="w-16 h-16 bg-gradient-to-r from-purple-600 to-red-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-600/30 mt-8"
+        className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-purple-600 to-red-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-600/30 mt-6 md:mt-8"
       >
         <motion.div
           animate={{ 
@@ -171,7 +175,7 @@ const TimelineSection = () => {
             repeatType: "reverse" 
           }}
         >
-          <FaRocket className="text-white text-2xl" />
+          <FaRocket className="text-white text-xl md:text-2xl" />
         </motion.div>
       </motion.div>
     </div>

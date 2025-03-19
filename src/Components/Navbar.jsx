@@ -58,7 +58,7 @@ function Navbar() {
     { name: "IEEE.org", url: "https://www.ieee.org/" },
     {
       name: "IEEE Xplore Digital Library",
-      url: "https://ieeexplore.ieee.org/Xplore/home.jsp",
+      url: "https://ieeexplore.ieee.org/",
     },
     { name: "IEEE Bangalore Section", url: "https://ieeebangalore.org/" },
     { name: "IEEE NKSS", url: "https://r10.ieee.org/north-karnataka/" },

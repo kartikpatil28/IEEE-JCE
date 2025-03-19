@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 // Import images
 import techtrivaImage from "../../assets/Events/Techtriva.jpg";
 import AessPoster from "../../assets/Events/AESS-poster.jpg";
-
+import Advisorimage from "../../assets/Photos/Dr_Krupa.jpg";
 
 const AESS = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   // Gallery images array
@@ -22,14 +22,14 @@ const AESS = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-200">
       {/* Hero Section */}
-      <motion.div 
+      <motion.div
         className="p-8 bg-gradient-to-r from-gray-900 to-blue-900 text-white text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         {/* AESS Logo */}
-        <motion.div 
+        <motion.div
           className="flex justify-center mb-6"
           initial={{ scale: 0.5 }}
           animate={{ scale: 1 }}
@@ -41,20 +41,20 @@ const AESS = () => {
             className="h-32 mx-auto border rounded-full shadow-lg hover:shadow-blue-500/50 transition-shadow duration-300"
           />
         </motion.div>
-        <motion.h1 
+        <motion.h1
           className="text-6xl md:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400"
           {...fadeIn}
         >
           Aerospace & Electronic Systems Society
         </motion.h1>
-        <motion.h2 
+        <motion.h2
           className="text-xl mb-6"
           {...fadeIn}
           transition={{ delay: 0.2 }}
         >
           IEEE JCE Student Branch
         </motion.h2>
-        <motion.div 
+        <motion.div
           className="max-w-3xl mx-auto"
           {...fadeIn}
           transition={{ delay: 0.3 }}
@@ -73,7 +73,7 @@ const AESS = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Vision */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-6 rounded-lg shadow-md border border-blue-700 hover:border-blue-500 transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
@@ -82,15 +82,17 @@ const AESS = () => {
                 Vision
               </h2>
               <p className="text-gray-300">
-                To be a premier student community for aerospace and electronic
-                systems innovation, fostering the next generation of engineers
-                who will revolutionize the fields of aviation, space technology,
-                and advanced electronic systems.
+                The vision of the AESS is to be essential to the worldwide
+                technical community and be recognized for outstanding
+                contributions in the fields of aerospace and electronic systems
+                as demonstrated through the Society’s products, service and
+                offerings in the areas of conferences, publications, education,
+                technical operations, industry relations, and member services.
               </p>
             </motion.div>
 
             {/* Mission */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-6 rounded-lg shadow-md border border-cyan-700 hover:border-cyan-500 transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
@@ -100,10 +102,14 @@ const AESS = () => {
                 Mission
               </h2>
               <p className="text-gray-300">
-                To inspire and educate students about aerospace and electronic
-                systems through workshops, seminars, competitions, and industry
-                connections, while promoting research, technical excellence, and
-                professional development in these fields.
+                The mission of the AESS is to provide a responsive and relevant
+                professional society that attracts, engages, aids, and retains a
+                diverse set of members (age, culture, community – theoretical,
+                managerial and applications) worldwide in the areas of our
+                fields of interest as defined in our constitution. AESS will
+                accomplish this through technical, chapter and society
+                activities in the areas of conferences, publications, education,
+                technical operations, industry relations, and member services.
               </p>
             </motion.div>
           </div>
@@ -113,23 +119,20 @@ const AESS = () => {
       {/* Committee Section */}
       <div className="p-8 bg-gray-900">
         <div className="max-w-4xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center text-blue-400 mb-8"
             {...fadeIn}
           >
             Committee
           </motion.h2>
-          
+
           {/* Advisor */}
-          <motion.div 
-            className="flex justify-center mb-12"
-            {...fadeIn}
-          >
+          <motion.div className="flex justify-center mb-12" {...fadeIn}>
             <div className="bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 max-w-xl w-full">
               <div className="flex flex-col">
                 <div className="w-full">
                   <img
-                    src="/api/placeholder/300/300"
+                    src={Advisorimage}
                     alt="Faculty Advisor"
                     className="w-full h-64 object-cover"
                   />
@@ -154,7 +157,7 @@ const AESS = () => {
           </motion.div>
 
           {/* Committee Members */}
-          <motion.h3 
+          <motion.h3
             className="text-2xl font-bold text-center text-blue-400 mt-12 mb-6"
             {...fadeIn}
           >
@@ -162,7 +165,7 @@ const AESS = () => {
           </motion.h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Member 1 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-blue-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -179,7 +182,7 @@ const AESS = () => {
             </motion.div>
 
             {/* Member 2 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-blue-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -197,7 +200,7 @@ const AESS = () => {
             </motion.div>
 
             {/* Member 3 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-blue-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -213,7 +216,7 @@ const AESS = () => {
             </motion.div>
 
             {/* Member 4 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-blue-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -229,7 +232,7 @@ const AESS = () => {
             </motion.div>
 
             {/* Member 5 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-blue-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -245,7 +248,7 @@ const AESS = () => {
             </motion.div>
 
             {/* Member 6 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 p-4 rounded-lg shadow-md text-center border border-gray-700 hover:border-blue-500 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               {...fadeIn}
@@ -266,7 +269,7 @@ const AESS = () => {
       {/* Events Section */}
       <div className="p-8 bg-black">
         <div className="max-w-5xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center text-blue-400 mb-8"
             {...fadeIn}
           >
@@ -274,7 +277,7 @@ const AESS = () => {
           </motion.h2>
           <div className="space-y-6">
             {/* Event 1 */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-700 hover:border-blue-500 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
@@ -310,7 +313,7 @@ const AESS = () => {
                     <span>C-109, Block C</span>
                   </div>
                   {/* Winners Section */}
-                  <motion.div 
+                  <motion.div
                     className="bg-gray-700 p-4 rounded-lg mt-4"
                     whileHover={{ scale: 1.01 }}
                   >
@@ -328,7 +331,7 @@ const AESS = () => {
             </motion.div>
 
             {/* Event 2 - TechTriva */}
-            <motion.div 
+            <motion.div
               className="bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-700 hover:border-blue-500 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               {...fadeIn}
@@ -361,7 +364,7 @@ const AESS = () => {
                   </div>
 
                   {/* Winners Section */}
-                  <motion.div 
+                  <motion.div
                     className="bg-gray-700 p-4 rounded-lg mt-4"
                     whileHover={{ scale: 1.01 }}
                   >
@@ -373,13 +376,16 @@ const AESS = () => {
                         🥇 <strong>First Place:</strong> Vinayak C.R & Om G.B
                       </li>
                       <li>
-                        🥈 <strong>Second Place:</strong> Kshiti Gaddigoudar & Varsha V
+                        🥈 <strong>Second Place:</strong> Kshiti Gaddigoudar &
+                        Varsha V
                       </li>
                       <li>
-                        🥉 <strong>Third Place:</strong> Abhishek S.D & Beerappa Maranur
+                        🥉 <strong>Third Place:</strong> Abhishek S.D & Beerappa
+                        Maranur
                       </li>
                       <li>
-                        🥉 <strong>Third Place:</strong> Bhoomika & Goutami Morajkar
+                        🥉 <strong>Third Place:</strong> Bhoomika & Goutami
+                        Morajkar
                       </li>
                     </ul>
                   </motion.div>
@@ -393,7 +399,7 @@ const AESS = () => {
       {/* Gallery Section */}
       <div className="p-8 bg-gray-900">
         <div className="max-w-5xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center text-blue-400 mb-8"
             {...fadeIn}
           >
@@ -401,7 +407,7 @@ const AESS = () => {
           </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {galleryImages.map((image, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="bg-gray-800 p-2 rounded shadow border border-gray-700 hover:border-blue-500 transition-all duration-300 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
@@ -416,10 +422,7 @@ const AESS = () => {
               </motion.div>
             ))}
           </div>
-          <motion.div 
-            className="text-center mt-6"
-            {...fadeIn}
-          >
+          <motion.div className="text-center mt-6" {...fadeIn}>
             <button className="bg-blue-700 text-white px-6 py-2 rounded-full shadow hover:bg-blue-600 transition-all duration-300 transform hover:scale-105">
               View More Photos
             </button>

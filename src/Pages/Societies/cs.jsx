@@ -8,9 +8,9 @@ const ComputerSociety = () => {
       <div className="p-8 bg-gradient-to-r from-gray-900 to-green-900 text-white text-center">
         {/* CS Logo */}
         <div className="flex justify-center mb-6">
-          <img 
-            src="https://ieeecs-media.computer.org/wp-media/2021/12/16190445/IEEE-CS_LogoTM-orange-354x108.png" 
-            alt="IEEE Computer Society Logo" 
+          <img
+            src="https://ieeecs-media.computer.org/wp-media/2021/12/16190445/IEEE-CS_LogoTM-orange-354x108.png"
+            alt="IEEE Computer Society Logo"
             className="h-32 mx-auto border rounded-full"
           />
         </div>
@@ -20,10 +20,11 @@ const ComputerSociety = () => {
         <h2 className="text-xl mb-6">IEEE JCE Student Branch</h2>
         <div className="max-w-3xl mx-auto">
           <p className="text-lg">
-            Fostering technological innovation and excellence in computing. 
-            We connect students with cutting-edge developments in software engineering, 
-            artificial intelligence, cybersecurity, and other computing disciplines 
-            to prepare the next generation of technology leaders.
+            Fostering technological innovation and excellence in computing. We
+            connect students with cutting-edge developments in software
+            engineering, artificial intelligence, cybersecurity, and other
+            computing disciplines to prepare the next generation of technology
+            leaders.
           </p>
         </div>
       </div>
@@ -38,9 +39,9 @@ const ComputerSociety = () => {
                 Vision
               </h2>
               <p className="text-gray-300">
-                To establish a vibrant community that empowers students to explore, 
-                innovate and excel in computing technologies, while fostering leadership 
-                and professional growth that will drive the future of the digital world.
+                To be the leading provider of technical information, community
+                services, and personalized services to the world’s computing
+                professionals.
               </p>
             </div>
 
@@ -50,10 +51,10 @@ const ComputerSociety = () => {
                 Mission
               </h2>
               <p className="text-gray-300">
-                To provide students with resources, opportunities, and connections that enhance 
-                their technical skills, promote collaborative learning, and create pathways to 
-                industry engagement through workshops, hackathons, seminars, and project-based 
-                learning experiences.
+                Be essential to the global technical community and computer
+                professionals everywhere and be universally recognized for the
+                contributions of technical professionals in developing and
+                applying technology to improve global conditions.
               </p>
             </div>
           </div>
@@ -85,7 +86,8 @@ const ComputerSociety = () => {
                     Branch Councellor
                   </p>
                   <p className="text-gray-400 text-sm">
-                    Professor, Department of Electronics and Communication Engineering
+                    Professor, Department of Electronics and Communication
+                    Engineering
                   </p>
                   <p className="text-gray-400 text-sm mt-2">
                     Email: drkruparasane@jce.edu
@@ -108,9 +110,7 @@ const ComputerSociety = () => {
                   <h3 className="text-xl font-bold text-white mb-1">
                     Ms.Shrutika Panchkatte
                   </h3>
-                  <p className="text-green-400 font-semibold mb-3">
-                    CS Chair
-                  </p>
+                  <p className="text-green-400 font-semibold mb-3">CS Chair</p>
                   <p className="text-gray-400 text-sm">
                     Electronics and Communication Engineering
                   </p>
@@ -133,9 +133,10 @@ const ComputerSociety = () => {
           <div className="bg-gray-800 rounded-lg p-8 text-center border border-gray-700">
             <h3 className="text-2xl font-bold text-white mb-4">Coming Soon!</h3>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              We're excited to announce that we are planning several engaging events for our 
-              Computer Society members. Stay tuned for workshops, hackathons, and technical 
-              sessions that will enhance your skills and knowledge in various computing domains.
+              We're excited to announce that we are planning several engaging
+              events for our Computer Society members. Stay tuned for workshops,
+              hackathons, and technical sessions that will enhance your skills
+              and knowledge in various computing domains.
             </p>
             <div className="mt-6">
               <button className="bg-green-700 text-white px-6 py-2 rounded shadow hover:bg-green-600 transition">
@@ -155,14 +156,13 @@ const ComputerSociety = () => {
           <div className="bg-gray-800 rounded-lg p-8 text-center border border-gray-700">
             <h3 className="text-2xl font-bold text-white mb-4">Coming Soon!</h3>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Our gallery will be updated with photos from our upcoming events and activities. 
-              Check back soon to see highlights from our Computer Society initiatives!
+              Our gallery will be updated with photos from our upcoming events
+              and activities. Check back soon to see highlights from our
+              Computer Society initiatives!
             </p>
           </div>
         </div>
       </div>
-
-     
     </div>
   );
 };

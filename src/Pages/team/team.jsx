@@ -19,68 +19,114 @@ function Team() {
   const teamMembers = [
     {
       image: austin,
-      name: "Austin Pacheco",
+      name: "Abhishek Devarushi",
       title: "IEEE Chair",
-      category: "Leadership",
+      category: "IEEE",
     },
     {
       image: chandan,
-      name: "Chandan Kangralkar",
+      name: "Beerappa Marannur",
       title: "IEEE Vice Chair",
-      category: "Leadership",
+      category: "IEEE",
     },
     {
       image: kshiti,
-      name: "Kshiti Gaddigoudar",
+      name: "Snehal Suryavanshi",
       title: "Secretary",
-      category: "Leadership",
+      category: "IEEE",
     },
     {
       image: shreedhar,
-      name: "Shreedhar Teradal",
+      name: "Darshan Tukkar",
       title: "Treasurer",
-      category: "Leadership",
+      category: "IEEE",
     },
     {
       image: rahul,
-      name: "Rahul Halkarni",
+      name: "Siddarth Jambhagi",
       title: "Media Head",
-      category: "Media",
+      category: "IEEE",
     },
     {
       image: abhishek,
-      name: "Abhishek Basinayak",
+      name: "Vinayak A",
       title: "Membership Coordinator",
-      category: "Coordinator",
+      category: "IEEE",
     },
-    { image: neha, name: "Neha Patil", title: "WIE Chair", category: "WIE" },
+
+    
+    {
+      image: abhishek,
+      name: "Kartik Patil",
+      title: "Webmaster",
+      category: "IEEE",
+    },
+
+    { image: neha, name: "Srushti Utturkar", title: "WIE Chair", category: "WIE" },
     {
       image: varsha,
-      name: "Varsha V",
+      name: "Shreya Dappadhuli",
       title: "WIE Vice Chair",
       category: "WIE",
     },
     {
       image: chaitra,
-      name: "Chaitra Kolli",
+      name: "Sharada Ugare",
       title: "WIE Secretary",
       category: "WIE",
     },
     {
       image: pawan,
-      name: "Pavan Wader",
+      name: "Namrata Mohan Patil",
       title: "WIE Treasurer",
       category: "WIE",
     },
     {
       image: siddarth,
-      name: "Siddharth Jambagi",
+      name: "Samiulla Kustagi",
       title: "WIE Media Head",
       category: "WIE",
     },
+    {
+      image: siddarth,
+      name: "Muskan Dhalayat",
+      title: "AESS Chair",
+      category: "AESS",
+    },
+    {
+      image: siddarth,
+      name: "Radhika Lohar",
+      title: "AESS Vice-Chair",
+      category: "AESS",
+    },
+    {
+      image: siddarth,
+      name: "Saniya Gijoni",
+      title: "AESS Secretary",
+      category: "AESS",
+    },
+    {
+      image: siddarth,
+      name: "Preeti Patil",
+      title: "AESS Treasurer",
+      category: "AESS",
+    },
+    {
+      image: siddarth,
+      name: "Meghana Kubasad",
+      title: "AESS Webmaster",
+      category: "AESS",
+    },
+    {
+      image: siddarth,
+      name: "Chetan Baloji",
+      title: "AESS Media Head",
+      category: "AESS",
+    },
+    
   ];
 
-  const filters = ["All", "Leadership", "WIE", "Media", "Coordinator"];
+  const filters = ["All", "IEEE", "WIE", "AESS"];
 
   const filteredMembers =
     activeFilter === "All"
@@ -345,7 +391,7 @@ function Team() {
           className="mb-12"
         >
           <h2 className="text-3xl font-bold text-center text-white mb-8">
-            Execom <span className="text-blue-400">2023-24</span>
+            Execom <span className="text-blue-400">2024-25</span>
           </h2>
 
           {/* Filter buttons */}
@@ -452,7 +498,7 @@ function Team() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-5xl font-bold text-white mb-2">11</div>
+              <div className="text-5xl font-bold text-white mb-2">18</div>
               <div className="text-blue-300">Team Members</div>
             </div>
             <div className="text-center">
@@ -460,8 +506,8 @@ function Team() {
               <div className="text-blue-300">WIE Members</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-white mb-2">4</div>
-              <div className="text-blue-300">Leadership Roles</div>
+              <div className="text-5xl font-bold text-white mb-2">6</div>
+              <div className="text-blue-300">AESS Membars</div>
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-white mb-2">20+</div>
